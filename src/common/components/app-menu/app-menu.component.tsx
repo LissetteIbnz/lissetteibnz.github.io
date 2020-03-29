@@ -30,7 +30,9 @@ export const AppMenu: React.FC = () => {
 
   return (
     <nav className={classes.navContainer}>
-      <h1>Sara Lissette</h1>
+      <h1>
+        SL<span>Blog</span>
+      </h1>
       <h2>Frontend developer</h2>
       <ul className={classes.menu}>
         {links.map(({ title, path }) => (

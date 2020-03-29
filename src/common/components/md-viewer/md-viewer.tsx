@@ -24,7 +24,5 @@ export const MarkdownViewer = (props: Props) => {
     };
   };
 
-  return (
-    <div className="markdown-body" dangerouslySetInnerHTML={markdownToHTML()} />
-  );
+  return <div className="markdown-body" dangerouslySetInnerHTML={markdownToHTML()} />;
 };

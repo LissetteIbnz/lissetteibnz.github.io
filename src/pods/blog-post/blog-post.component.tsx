@@ -11,7 +11,6 @@ export const BlogPost = () => {
   React.useEffect(() => {
     if (!loading) {
       if (data) {
-        console.log('BlogPost -> data', data);
         const issues = data.repository.issue;
         setPostNodeId(issues.id);
         setPost(issues);

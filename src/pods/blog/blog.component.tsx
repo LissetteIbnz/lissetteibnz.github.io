@@ -1,33 +1,18 @@
 import React from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { GET_POSTS } from './blog.api';
-import { config } from '@/core/config';
 import { CenteredLayout } from '@/layouts';
+import { Card } from './components';
+import { usePost } from './api/blog.hooks';
 
 export const Blog = () => {
-  const [posts, setPosts] = React.useState([]);
-  const { loading, error, data } = useQuery(GET_POSTS);
-
-  React.useEffect(() => {
-    if (!loading) {
-      if (error) {
-        console.error(error);
-      }
-
-      if (data) {
-        setPosts(data?.repository?.issues?.nodes);
-      }
-    }
-  }, [loading, error, data]);
+  const { posts } = usePost();
 
   return (
     <CenteredLayout>
-      <h1>{config.title}</h1>
-      <ul>
-        {posts.map((post, index) => (
-          <li key={index}>{post.title}</li>
-        ))}
-      </ul>
+      {posts.map((post, index) => (
+        <Card key={index} post={post}>
+          {post.content}
+        </Card>
+      ))}
     </CenteredLayout>
   );
 };

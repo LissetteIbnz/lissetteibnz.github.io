@@ -2,8 +2,10 @@ import React from 'react';
 import { css } from 'emotion';
 
 const root = css`
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 90%;
+  max-width: 1000px;
+  margin: 2rem auto 0px;
+  padding: 20px 10px;
 `;
 
 export const CenteredLayout: React.FC = ({ children }) => <div className={root}>{children}</div>;

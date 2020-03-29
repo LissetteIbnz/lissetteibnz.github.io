@@ -15,6 +15,10 @@ export const navContainer = css`
     font-weight: 700;
     font-size: 3em;
     color: inherit;
+    letter-spacing: 0.12rem;
+    & > span {
+      color: #463047;
+    }
   }
   & h2 {
     font-weight: 400;
