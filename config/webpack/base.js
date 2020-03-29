@@ -8,8 +8,8 @@ module.exports = merge(
     context: helpers.resolveFromRootPath('src'),
     resolve: {
       alias: {
-        '@material-ui/core': '@material-ui/core/es',
-        '~': helpers.resolveFromRootPath('src'),
+        '@': helpers.resolveFromRootPath('src'),
+        // '@material-ui/core': '@material-ui/core/es',
         // assets: helpers.resolveFromRootPath('src/assets'),
         // common: helpers.resolveFromRootPath('src/common'),
         // core: helpers.resolveFromRootPath('src/core'),
@@ -21,7 +21,7 @@ module.exports = merge(
       extensions: ['.js', '.ts', '.tsx'],
     },
     entry: {
-      baseStyles: ['./base.css'],
+      baseStyles: ['./base.css', './app.css'],
       app: ['regenerator-runtime/runtime', './index.tsx'],
     },
     module: {
