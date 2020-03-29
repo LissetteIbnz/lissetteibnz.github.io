@@ -1,3 +1,4 @@
 import React from 'react';
+import { Blog } from '@/pods/blog';
 
-export const HomeScene = () => <h1>Home</h1>;
+export const HomeScene = () => <Blog />;
