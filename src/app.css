@@ -40,7 +40,7 @@ p,
 i,
 a,
 li {
-  margin-top: 21px;
+  /* margin-top: 21px; */
   font-family: 'Quicksand';
   font-size: 21px;
   letter-spacing: -0.03px;

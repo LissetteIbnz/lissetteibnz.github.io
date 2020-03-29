@@ -27,4 +27,5 @@ export const menu = css`
   display: flex;
   justify-content: space-evenly;
   list-style: none;
+  margin-bottom: 0;
 `;
