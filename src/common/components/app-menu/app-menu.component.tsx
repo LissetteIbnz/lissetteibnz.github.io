@@ -31,7 +31,7 @@ export const AppMenu: React.FC = () => {
   return (
     <nav className={classes.navContainer}>
       <h1>
-        SL<span>Blog</span>
+        LissetteIbnz<span>Blog</span>
       </h1>
       <h2>Frontend developer</h2>
       <ul className={classes.menu}>
