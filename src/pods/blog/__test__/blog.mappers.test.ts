@@ -18,7 +18,7 @@ describe('mapIssueAmToVM =>', () => {
       },
       body: `#Irrelevant H1
       Lorem ipsum`,
-      id: 1,
+      number: 1,
       labels: {
         nodes: [
           {
@@ -41,12 +41,9 @@ describe('mapIssueAmToVM =>', () => {
       id: 1,
       content: `#Irrelevant H1
       Lorem ipsum`,
-      datePublish: '2020-03-29',
-      tags: [
-        { color: 'red', label: 'blog' },
-        { color: 'red', label: 'label 1' },
-      ],
-      readingTime: '2 min read',
+      datePublish: 'March 29, 2020',
+      tags: [{ color: '#red', label: 'label 1' }],
+      readingTime: '0 min read',
       title: 'Irrelevant title',
     };
 
