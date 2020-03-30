@@ -1,8 +1,14 @@
 import React from 'react';
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { AppMenu } from '@/common/components';
-import { BlogPost } from '@/pods/blog-post';
-import { AboutScene, HomeScene } from '@/scenes';
+import {
+  AboutScene,
+  BlogScene,
+  HomeScene,
+  PostDetailsScene,
+  ProjectsScene,
+  ResumeScene,
+} from '@/scenes';
 import { baseRoutes } from './routes';
 
 export const RouterComponent = () => (
@@ -18,14 +24,18 @@ export const RouterComponent = () => (
       <Route exact={true} path={baseRoutes.about}>
         <AboutScene />
       </Route>
-      {/* <Route path={baseRoutes.blogPost}>
-        <BlogPost />
-      </Route> */}
+      <Route exact={true} path={baseRoutes.blog}>
+        <BlogScene />
+      </Route>
+      <Route exact={true} path={baseRoutes.cv}>
+        <ResumeScene />
+      </Route>
+      <Route exact={true} path={baseRoutes.projects}>
+        <ProjectsScene />
+      </Route>
       <Route path={baseRoutes.blogPost}>
-        <BlogPost />
+        <PostDetailsScene />
       </Route>
     </Switch>
   </HashRouter>
 );
-
-// blog/🚀%20First%20post%20(test%20blog)/1
