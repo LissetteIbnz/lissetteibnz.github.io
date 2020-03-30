@@ -1,30 +1,27 @@
 import { gql } from 'apollo-boost';
 import { config } from '@/core/config';
 
-export const GET_POSTS = gql`
+enum Filters {
+  FIRST_100_ITEMS = 100,
+  STATE_POST = 'OPEN',
+}
+
+export const getPosts = () => gql`
 {
   repository(owner: "${config.githubUserName}", name: "${config.githubRepo}") {
-    issues(first: 100, states: OPEN, filterBy: { labels: "blog" }) {
+    issues(first: ${Filters.FIRST_100_ITEMS}, states: ${Filters.STATE_POST}, filterBy: { labels: "${config.tagFilterBlog}" }) {
       nodes {
         title
         body
-        bodyHTML
         bodyText
         number
-        labels(first: 100) {
+        labels(first: ${Filters.FIRST_100_ITEMS}) {
           nodes {
             color
             name
-            id
           }
         }
-        author {
-          url
-          avatarUrl
-          login
-        }
         updatedAt
-        id
       }
     }
   }

@@ -1,5 +1,5 @@
-import { getValidLabels, transformedDate } from '../blog.business';
-import { Label } from '../api';
+import { getValidLabels, transformedDate } from './utils';
+import { AM } from '@/services/api';
 
 describe('getValidLabels =>', () => {
   test('should return an empty collection when pass an empty labels list', () => {
@@ -7,7 +7,7 @@ describe('getValidLabels =>', () => {
   });
 
   test('should return a valid list without blog item', () => {
-    const labelsWithBlog: Label[] = [
+    const labelsWithBlog: AM.Label[] = [
       {
         color: 'irrelevant color',
         id: 'irrelevant id',
@@ -20,7 +20,7 @@ describe('getValidLabels =>', () => {
       },
     ];
 
-    const expectedLabels: Label[] = [
+    const expectedLabels: AM.Label[] = [
       {
         color: 'irrelevant color',
         id: 'irrelevant id',
@@ -32,7 +32,7 @@ describe('getValidLabels =>', () => {
   });
 
   test('should return an empty list when pass a list with just blog item', () => {
-    const labelsWithBlog: Label[] = [
+    const labelsWithBlog: AM.Label[] = [
       {
         color: 'irrelevant color',
         id: 'irrelevant id',

@@ -4,10 +4,10 @@ export interface Tag {
 }
 
 export interface Post {
-  id: number;
-  title: string;
-  readingTime: string;
-  tags: Tag[];
   content: string;
   datePublish: string;
+  id: number;
+  readingTime: string;
+  tags: Tag[];
+  title: string;
 }

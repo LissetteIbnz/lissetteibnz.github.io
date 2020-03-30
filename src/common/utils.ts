@@ -1,8 +1,9 @@
-import { Label } from './api';
 import readingTime from 'reading-time';
+import { AM } from '@/services/api';
+import { config } from '@/core/config';
 
-export const getValidLabels = (labels: Label[]): Label[] =>
-  labels && labels.filter(label => label.name !== 'blog');
+export const getValidLabels = (labels: AM.Label[]): AM.Label[] =>
+  labels && labels.filter(label => label.name !== config.tagFilterBlog);
 
 export const getReadingTime = (content: string): string =>
   content.length && `${Math.round(readingTime(content).minutes)} min read`;

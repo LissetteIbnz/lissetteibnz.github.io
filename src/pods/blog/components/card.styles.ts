@@ -49,7 +49,7 @@ export const content = css`
   p {
     font-size: 18px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
     margin: 0;

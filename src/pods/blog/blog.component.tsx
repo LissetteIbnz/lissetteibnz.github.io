@@ -1,10 +1,10 @@
 import React from 'react';
 import { CenteredLayout } from '@/layouts';
 import { Card } from './components';
-import { usePost } from './api/blog.hooks';
+import { usePostsList } from './api/blog.api-hooks';
 
 export const Blog = () => {
-  const { posts } = usePost();
+  const { posts } = usePostsList();
 
   return (
     <CenteredLayout>

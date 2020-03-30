@@ -26,4 +26,7 @@ export const config = {
     titleColor: '#ff5252',
     subtitleColor: '#37474f',
   },
+
+  // Tag to post
+  tagFilterBlog: 'blog',
 };
