@@ -7,8 +7,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = merge(base, {
   mode: 'production',
   output: {
-    path: helpers.resolveFromRootPath('dist'),
-    filename: './js/[name].[chunkhash].js',
+    path: helpers.resolveFromRootPath(''),
+    filename: './dist/js/[name].[chunkhash].js',
   },
   module: {
     rules: [
@@ -16,7 +16,7 @@ module.exports = merge(base, {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: './images/[name].[ext]?[hash]',
+          name: './dist/images/[name].[ext]?[hash]',
         },
       },
       {
@@ -30,8 +30,7 @@ module.exports = merge(base, {
     //   path: 'prod.env',
     // }),
     new MiniCssExtractPlugin({
-      filename: './css/[chunkhash].[name].css',
-      chunkFilename: '[chunkhash].[id].css',
+      filename: './dist/css/[chunkhash].[name].css',
     }),
   ],
 });
