@@ -76,32 +76,28 @@ const moveSides = keyframes`
   0% {
      transform: translateX(-30px);
      letter-spacing: 0px;
-     color: $m-04;
   }
 
   25% {
      letter-spacing: 3px;
-     color: $m-03;
   }
 
   50% {
      transform: translateX(30px);
      letter-spacing: 0px;
-     color: $m-04;
   }
 
   75% {
      letter-spacing: 3px;
-     color: $m-03;
   }
 
   100% {
      transform: translateX(-30px);
      letter-spacing: 0px;
-     color: $m-04;
   }`;
 
 export const text = css`
+  padding-top: 1rem;
   color: ${color};
   z-index: 9999;
   animation: ${moveSides} 4s ease infinite;
