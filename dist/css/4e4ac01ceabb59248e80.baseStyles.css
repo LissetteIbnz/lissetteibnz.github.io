@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Comic+Neue|Quicksand|Roboto);
+@import url(https://fonts.googleapis.com/css?family=Quicksand|Roboto);
+@import url(https://fonts.googleapis.com/css?family=Quicksand|Roboto);
 @font-face {
   font-family: octicons-link;
   src: url(data:font/woff;charset=utf-8;base64,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)
@@ -56,8 +57,7 @@
   -webkit-text-size-adjust: 100%;
   color: #24292e;
   line-height: 1.5;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-family: 'Quicksand', 'Roboto', 'Segoe UI', 'Oxygen', 'Ubuntu', 'Helvetica Neue', sans-serif;
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -958,6 +958,11 @@
   padding-left: 128px !important;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 html,
 body {
   margin: 0;
@@ -969,22 +974,18 @@ h1,
 h2,
 p,
 i,
-a,
-.first-letter,
-.authorName a {
+a {
   color: rgba(0, 0, 0, 0.84);
   text-rendering: optimizeLegibility;
 }
 
 h1 {
-  font-family: 'Comic Neue', serif;
   font-size: 48px;
   text-align: left;
-  margin-bottom: 8px;
+  padding-bottom: 1.2rem;
 }
 
 h2 {
-  font-family: 'Comic Neue', sans-serif;
   font-size: 30px;
   font-weight: 700;
   padding: 0;
@@ -999,7 +1000,6 @@ i,
 a,
 li {
   /* margin-top: 21px; */
-  font-family: 'Quicksand';
   font-size: 21px;
   letter-spacing: -0.03px;
   line-height: 1.58;
@@ -1010,14 +1010,13 @@ a {
 }
 
 blockquote {
-  font-family: 'Playfair Display', serif;
+  font-family: serif;
   font-size: 25px;
   font-style: italic;
   letter-spacing: -0.36px;
   line-height: 44.4px;
   overflow-wrap: break-word;
   margin: 30px 0 33px 0;
-  /* text-align: center; */
   color: rgba(0, 0, 0, 0.68);
   padding: 0 0 0 50px;
 }
@@ -1046,71 +1045,5 @@ pre {
 mark,
 .highlighted {
   background: #7dffb3;
-}
-
-.first-letter {
-  overflow-wrap: break-word;
-  font-family: 'Playfair Display', serif;
-  font-size: 60px;
-  line-height: 60px;
-  display: block;
-  position: relative;
-  float: left;
-  margin: 0px 7px 0 -5px;
-}
-
-.subtitle {
-  font-family: 'Comic Neue', sans-serif;
-  color: rgba(0, 0, 0, 0.54);
-  margin: 0 0 24px 0;
-}
-
-::selection {
-  background-color: lavender;
-}
-
-/* Slide up */
-
-.blog-post-anchor {
-  color: #343139;
-  text-decoration: none;
-  box-shadow: inset 0 -0.125em 0 #0e0d0d;
-  transition: box-shadow 270ms cubic-bezier(0.77, 0, 0.175, 1),
-    color 270ms cubic-bezier(0.77, 0, 0.175, 1);
-  padding-right: 2px;
-  padding-left: 2px;
-}
-
-.blog-post-anchor:hover {
-  box-shadow: inset 0 -1.125em 0 #080808;
-  color: white;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-@keyframes scale-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  p,
-  i,
-  a,
-  li {
-    font-size: 18px;
-  }
-  blockquote {
-    font-size: 20px;
-  }
 }
 
