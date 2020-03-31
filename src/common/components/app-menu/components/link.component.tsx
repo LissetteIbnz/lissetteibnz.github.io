@@ -11,7 +11,7 @@ interface LinkProps {
 export const Link: React.FC<LinkProps> = ({ label, path }) => {
   const match = useRouteMatch({
     path,
-    exact: true,
+    exact: false,
   });
 
   return (

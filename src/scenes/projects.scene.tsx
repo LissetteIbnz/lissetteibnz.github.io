@@ -1,3 +1,4 @@
 import React from 'react';
+import { Projects } from '@/pods/projects';
 
-export const ProjectsScene = () => <h1>Projects Scene</h1>;
+export const ProjectsScene = () => <Projects />;

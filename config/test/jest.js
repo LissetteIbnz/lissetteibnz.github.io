@@ -3,7 +3,8 @@ module.exports = {
   preset: 'ts-jest',
   restoreMocks: true,
   moduleNameMapper: {
-    '^~(.*)$': '<rootDir>/src/$1',
+    '^@(.*)$': '<rootDir>/src/$1',
+    '^content(.*)$': '<rootDir>/content/$1',
     // '^common-app(.*)$': '<rootDir>/src/common-app/$1',
     // '^common(.*)$': '<rootDir>/src/common/$1',
     // '^scenes(.*)$': '<rootDir>/src/scenes/$1',

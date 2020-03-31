@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const helpers = require('./helpers');
+const hljs = require('highlight.js');
 
 module.exports = merge(
   {},
@@ -9,6 +10,7 @@ module.exports = merge(
     resolve: {
       alias: {
         '@': helpers.resolveFromRootPath('src'),
+        content: helpers.resolveFromRootPath('content'),
         // '@material-ui/core': '@material-ui/core/es',
         // assets: helpers.resolveFromRootPath('src/assets'),
         // common: helpers.resolveFromRootPath('src/common'),
@@ -30,6 +32,25 @@ module.exports = merge(
           test: /\.tsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
+        },
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: 'html-loader',
+            },
+            {
+              loader: 'markdown-loader',
+              options: {
+                highlight: (code, lang) => {
+                  if (!lang || ['text', 'literal', 'nohighlight'].includes(lang)) {
+                    return `<pre class="hljs">${code}</pre>`;
+                  }
+                  return hljs.highlight(lang, code).value;
+                },
+              },
+            },
+          ],
         },
       ],
     },

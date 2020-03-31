@@ -1,3 +1,5 @@
 import React from 'react';
+import { LoadContent } from '@/pods/load-content';
+import content from '../../content/es/resume.md';
 
-export const AboutScene = () => <h1>About</h1>;
+export const AboutScene = () => <LoadContent content={content} />;
