@@ -1,28 +1,33 @@
 import { gql } from 'apollo-boost';
 import { config } from '@/core/config';
 
-const issueNumber = parseInt(window.location.href.split('/').pop());
+enum Filters {
+  FIRST_100_ITEMS = 100,
+}
 
-export const GET_POST = gql`{
+export const getPostByIssue = (issueNumber: string) => gql`{
   repository(owner: "${config.githubUserName}", name: "${config.githubRepo}") {
     issue(number: ${issueNumber}) {
       title
       body
       bodyHTML
       url
-      bodyText
       number
-      bodyHTML
       author {
         url
         avatarUrl
         login
       }
-      reactions(first:100){
-        nodes{
+      labels(first: ${Filters.FIRST_100_ITEMS}) {
+        nodes {
+          name
+          color
+        }
+      }
+      reactions(first:${Filters.FIRST_100_ITEMS}){
+        nodes {
           content
-          user{
-            id
+          user {
             login
           }
         }

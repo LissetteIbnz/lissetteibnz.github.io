@@ -1,24 +1,24 @@
+import { AM } from '@/services/api';
 import { mapIssueAMToVM } from '../blog.mappers';
-import { IssueNode } from '../api';
 import { Post } from '../blog.vm';
 
 describe('mapIssueAmToVM =>', () => {
   test('should return an empty array when pass an empty issue list', () => {
-    const issue: IssueNode = undefined;
+    const issue: AM.Issue = undefined;
     const result = mapIssueAMToVM(issue);
     expect(result).toEqual(undefined);
   });
 
   test('should to convert a valid Post when pass a valid Issue', () => {
-    const issue: IssueNode = {
+    const issue: AM.Issue = {
       author: {
         avatarUrl: 'url',
         login: 'Irrelevant author',
         url: 'url',
       },
-      body: `#Irrelevant H1
-      Lorem ipsum`,
-      id: 1,
+      body: 'Irrelevant body',
+      bodyText: 'Irrelevant bodyText',
+      number: 1,
       labels: {
         nodes: [
           {
@@ -39,14 +39,10 @@ describe('mapIssueAmToVM =>', () => {
 
     const expected: Post = {
       id: 1,
-      content: `#Irrelevant H1
-      Lorem ipsum`,
-      datePublish: '2020-03-29',
-      tags: [
-        { color: 'red', label: 'blog' },
-        { color: 'red', label: 'label 1' },
-      ],
-      readingTime: '2 min read',
+      content: `Irrelevant bodyText`,
+      datePublish: 'March 29, 2020',
+      tags: [{ color: '#red', label: 'label 1' }],
+      readingTime: '0 min read',
       title: 'Irrelevant title',
     };
 

@@ -23,6 +23,7 @@ export const Card: React.FC<CardProps> = ({
 
   const handleOnClick = () => {
     const path = generatePath(baseRoutes.blogPost, { title, issueNumber: id });
+    console.log('handleOnClick -> path', path);
     history.push(path);
   };
 

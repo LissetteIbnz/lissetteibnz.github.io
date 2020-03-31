@@ -1,15 +1,16 @@
 import React from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import { useComponentIsMounted } from '@/common/hooks';
-import { GetPostResponse, GET_POSTS } from '.';
 import { Post } from '../blog.vm';
 import { mapIssueListAMToVM } from '../blog.mappers';
+import { GetPostsListResponse } from './blog.api-model';
+import { getPosts } from './blog.api';
 
-export const usePost = (): { posts: Post[]; loading: boolean } => {
+export const usePostsList = (): { posts: Post[]; loading: boolean } => {
   const isMounted = useComponentIsMounted();
 
   const [posts, setPosts] = React.useState<Post[]>([]);
-  const { loading, error, data } = useQuery<GetPostResponse>(GET_POSTS);
+  const { loading, error, data } = useQuery<GetPostsListResponse>(getPosts());
 
   React.useEffect(() => {
     if (!loading) {
