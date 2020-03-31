@@ -1,6 +1,6 @@
 import React from 'react';
 import { CenteredLayout } from '@/layouts';
-import { MarkdownViewer } from '@/common/components';
+import { MarkdownViewer, Loader } from '@/common/components';
 import { usePost } from './api';
 
 interface PostDetailsProps {
@@ -8,9 +8,14 @@ interface PostDetailsProps {
 }
 
 export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
-  const { post } = usePost(issueNumber);
+  const { post, loading } = usePost(issueNumber);
 
   return (
-    <CenteredLayout>{post?.title && <MarkdownViewer content={post.content} />}</CenteredLayout>
+    <Loader loading={loading}>
+      <CenteredLayout>
+        <h1>{post?.title}</h1>
+        {post?.content && <MarkdownViewer content={post.content} />}
+      </CenteredLayout>
+    </Loader>
   );
 };

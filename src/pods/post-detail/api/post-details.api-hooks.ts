@@ -6,8 +6,7 @@ import { mapIssueAMToPostVM } from '../post-details.mappers';
 import { GetPostResponse } from './post-details.api-model';
 import { getPostByIssue } from './post-details.api';
 
-// TODO: Pending to implement a loader
-export const usePost = (issueNumber: string) => {
+export const usePost = (issueNumber: string): { post: Post; loading: boolean } => {
   const isMounted = useComponentIsMounted();
 
   const [post, setPost] = React.useState<Post>();
@@ -21,7 +20,7 @@ export const usePost = (issueNumber: string) => {
   }, [loading, error, data]);
 
   return {
-    loading,
     post,
+    loading,
   };
 };
