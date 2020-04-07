@@ -49,6 +49,7 @@
     "babel-loader": "^8.1.0",
     "babel-plugin-emotion": "^10.0.29",
     "css-loader": "^3.4.2",
+    "dotenv-webpack": "^1.7.0",
     "html-loader": "^1.0.0",
     "html-webpack-plugin": "^4.0.2",
     "jest": "^25.2.4",
