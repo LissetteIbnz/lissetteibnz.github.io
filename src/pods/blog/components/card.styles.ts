@@ -2,11 +2,13 @@ import { css } from 'emotion';
 
 export const container = css`
   cursor: pointer;
-  margin-bottom: 6rem;
   position: relative;
   border-radius: 10px;
   padding: 1.2rem;
   transition: all 0.2s ease 0s;
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
   &:hover {
     background-color: rgb(245, 245, 245);
   }
