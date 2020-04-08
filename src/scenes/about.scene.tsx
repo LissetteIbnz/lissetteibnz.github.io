@@ -1,5 +1,10 @@
 import React from 'react';
-import { LoadContent } from '@/pods/load-content';
 import content from 'content/es/aboutMe.md';
+import { AppLayout } from '@/layouts';
+import { MarkdownViewer } from '@/common/components';
 
-export const AboutScene = () => <LoadContent content={content} />;
+export const AboutScene = () => (
+  <AppLayout>
+    <MarkdownViewer content={content} />
+  </AppLayout>
+);

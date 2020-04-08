@@ -1,4 +1,10 @@
 import React from 'react';
-import { Projects } from '@/pods/projects';
+import content from 'content/es/projects.md';
+import { AppLayout } from '@/layouts';
+import { MarkdownViewer } from '@/common/components';
 
-export const ProjectsScene = () => <Projects />;
+export const ProjectsScene = () => (
+  <AppLayout>
+    <MarkdownViewer content={content} />
+  </AppLayout>
+);

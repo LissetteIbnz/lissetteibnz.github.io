@@ -10,13 +10,12 @@ export const FooterActions: React.FC<FooterActionsProps> = ({ urlGitHub }) => (
   <div
     className={css`
       padding-top: 1.2rem;
-      padding-bottom: 4rem;
     `}
   >
     <a
       className={css`
         float: right;
-        font-size: 14px;
+        font-size: 16px;
         text-decoration: none;
         transition-property: all;
         transition-duration: 0.15s, 0.15s, 0.15s;

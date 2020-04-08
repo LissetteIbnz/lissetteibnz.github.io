@@ -1,1 +1,2 @@
-export * from './centered.layout';
+export { AppLayout } from './app.layout';
+export { CenteredLayout } from './centered.layout';

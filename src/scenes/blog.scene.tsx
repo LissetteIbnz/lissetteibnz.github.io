@@ -1,4 +1,9 @@
 import React from 'react';
 import { Blog } from '@/pods/blog';
+import { AppLayout } from '@/layouts';
 
-export const BlogScene = () => <Blog />;
+export const BlogScene = () => (
+  <AppLayout>
+    <Blog />
+  </AppLayout>
+);
