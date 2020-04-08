@@ -16,10 +16,7 @@ module.exports = merge(
       extensions: ['.js', '.ts', '.tsx'],
     },
     entry: {
-      baseStyles: [
-        `${helpers.srcAssetsPath}/markdown-base.css`,
-        `${helpers.srcAssetsPath}/app.css`,
-      ],
+      baseStyles: [`${helpers.srcAssetsPath}/app.css`],
       app: ['regenerator-runtime/runtime', './index.tsx'],
     },
     module: {

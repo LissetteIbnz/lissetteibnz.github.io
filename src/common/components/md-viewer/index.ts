@@ -1,1 +1,1 @@
-export * from './md-viewer';
+export * from './md-viewer.component';

@@ -7,6 +7,7 @@ import typescript from 'highlight.js/lib/languages/typescript';
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('typescript', typescript);
 import 'highlight.js/styles/hopscotch.css';
+import { markdownBody } from './md-viewer.styles';
 
 interface Props {
   content: string;
@@ -19,7 +20,7 @@ const createMarkdownRender = () =>
     typographer: false,
     linkify: false,
     breaks: false,
-    highlight: function(str, lang) {
+    highlight: function (str, lang) {
       if (lang && hljs.getLanguage(lang)) {
         try {
           return hljs.highlight(lang, str).value;
@@ -40,5 +41,5 @@ export const MarkdownViewer = (props: Props) => {
     };
   };
 
-  return <div className="markdown-body" dangerouslySetInnerHTML={markdownToHTML()} />;
+  return <div className={markdownBody} dangerouslySetInnerHTML={markdownToHTML()} />;
 };
