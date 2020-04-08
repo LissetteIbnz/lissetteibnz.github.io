@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
+import { Footer } from '@/common/components';
 
 const root = css`
   width: 90%;
@@ -8,4 +9,9 @@ const root = css`
   padding: 7rem 10px 10px;
 `;
 
-export const CenteredLayout: React.FC = ({ children }) => <div className={root}>{children}</div>;
+export const CenteredLayout: React.FC = ({ children }) => (
+  <>
+    <div className={root}>{children}</div>
+    <Footer />
+  </>
+);
