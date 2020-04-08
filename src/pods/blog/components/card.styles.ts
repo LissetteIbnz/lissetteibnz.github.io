@@ -16,6 +16,7 @@ export const header = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 1.6rem;
   & > div {
     display: flex;
     justify-content: start;
@@ -40,12 +41,17 @@ export const header = css`
     & > span::before {
       padding: 8px;
       color: black;
-      content: '-';
+      content: '·';
     }
   }
 `;
 
 export const content = css`
+  h2 {
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.25;
+  }
   p {
     font-size: 18px;
     display: -webkit-box;

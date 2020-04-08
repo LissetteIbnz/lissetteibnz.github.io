@@ -3,7 +3,7 @@ import { useHistory, generatePath } from 'react-router-dom';
 import { css } from 'emotion';
 import { Tag } from '../blog.vm';
 import * as classes from './card.styles';
-import { baseRoutes } from '@/core/router';
+import { switchRoutes } from '@/core/router';
 
 interface CardProps {
   post: {
@@ -22,7 +22,7 @@ export const Card: React.FC<CardProps> = ({
   const history = useHistory();
 
   const handleOnClick = () => {
-    const path = generatePath(baseRoutes.blogPost, { title, issueNumber: id });
+    const path = generatePath(switchRoutes.blogPost, { title, issueNumber: id });
     history.push(path);
   };
 

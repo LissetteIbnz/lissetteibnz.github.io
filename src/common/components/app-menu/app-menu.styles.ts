@@ -1,35 +1,49 @@
 import { css } from 'emotion';
+import { theme } from '@/core/theme';
 
-export const navContainer = css`
-  padding: 1rem;
-  background-color: #d16ba5; /** old browsers */
-  background-image: linear-gradient(to right top, #d16ba5, #c37bbf, #b08bd3, #9a9ae1, #86a8e7);
-  color: #fff;
-  & h1,
-  h2 {
-    margin: 0.8rem 0px;
-    text-align: center;
-    line-height: 1.15;
-  }
-  & h1 {
-    font-weight: 700;
-    font-size: 3em;
-    color: inherit;
-    letter-spacing: 0.12rem;
-    & > span {
-      color: #463047;
-    }
-  }
-  & h2 {
-    font-weight: 400;
-    font-size: 1.5em;
-    color: rgb(55, 71, 79);
-  }
+const { oposite: baseColor, highlight: accentColor } = theme.text;
+
+export const fixed = css`
+  margin-bottom: 0;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  min-height: 50px;
+  padding: 20px 0;
 `;
 
-export const menu = css`
+export const container = css`
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
   display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-  margin-bottom: 0;
+  justify-content: space-between;
+  align-items: baseline;
+
+  #logo {
+    color: ${baseColor};
+    font-size: 1.5rem;
+    span {
+      font-style: italic;
+      color: ${accentColor};
+    }
+  }
+
+  a {
+    font-size: 1.2rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    -webkit-transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.4s;
+    padding: 0;
+    margin: 15px 20px;
+    text-transform: uppercase;
+    &:hover,
+    &:focus {
+      color: ${baseColor};
+    }
+  }
 `;

@@ -6,6 +6,7 @@ import { getReadingTime, transformedDate } from '@/common/utils';
 export const mapIssueAMToPostVM = (issue: AM.Issue): Post =>
   issue && {
     author: issue.author.login,
+    authorUrl: issue.author.url,
     avatarUrl: issue.author.avatarUrl,
     content: issue.body,
     datePublish: transformedDate(issue.updatedAt),
@@ -18,6 +19,7 @@ export const mapIssueAMToPostVM = (issue: AM.Issue): Post =>
 
 export const createEmptyPost = (): Post => ({
   author: '',
+  authorUrl: '',
   avatarUrl: '',
   content: '',
   datePublish: '',

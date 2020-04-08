@@ -5,8 +5,11 @@ import { config } from '@/core/config';
 export const getValidLabels = (labels: AM.Label[]): AM.Label[] =>
   labels && labels.filter(label => label.name !== config.tagFilterBlog);
 
+export const normalizeString = (expression: string) =>
+  expression.replace(/([a-z])([A-Z])/g, '$1 $2');
+
 export const getReadingTime = (content: string): string =>
-  content.length && `${Math.round(readingTime(content).minutes)} min read`;
+  content.length && `${Math.ceil(readingTime(content).minutes)} min read`;
 
 export const normalizeColor = (color: string): string =>
   color.length && color.startsWith('#') ? color : `#${color}`;

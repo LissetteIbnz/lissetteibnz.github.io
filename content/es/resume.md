@@ -1,1 +1,3 @@
-# Hola, me llamo Sara Lissette Luis Ibáñez y soy desarrolladora Frontend
+# Hola, soy Sara Lissette
+
+Soy desarrolladora Frontend especializada en React, Vue y TypeScript.

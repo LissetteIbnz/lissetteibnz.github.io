@@ -15,6 +15,7 @@ interface Reaction {
 
 export interface Post {
   author: string;
+  authorUrl: string;
   avatarUrl: string;
   content: string;
   datePublish: string;

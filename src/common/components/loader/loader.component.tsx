@@ -7,7 +7,7 @@ interface LoaderProps {
 }
 
 export const Loader: React.FC<LoaderProps> = ({ loading, message = 'loading', children }) =>
-  !loading ? (
+  loading ? (
     <div className={classes.root}>
       <svg
         width="37"

@@ -1,6 +1,6 @@
 import { css, keyframes } from 'emotion';
 
-export const color = '#c47abd';
+export const color = '#333'; //'#c47abd';
 
 const swing = keyframes`
   50% {
@@ -97,7 +97,7 @@ const moveSides = keyframes`
   }`;
 
 export const text = css`
-  padding-top: 1rem;
+  font-size: 1.4rem;
   color: ${color};
   z-index: 9999;
   animation: ${moveSides} 4s ease infinite;

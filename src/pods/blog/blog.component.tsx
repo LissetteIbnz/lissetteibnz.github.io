@@ -1,8 +1,9 @@
 import React from 'react';
 import { CenteredLayout } from '@/layouts';
-import { Loader } from '@/common/components';
+import { PreLoader } from '@/common/components/pre-loader/pre-loader.component';
 import { usePostsList } from './api/';
 import { Card } from './components';
+import { Loader } from '@/common/components';
 
 export const Blog = () => {
   const { posts, loading } = usePostsList();

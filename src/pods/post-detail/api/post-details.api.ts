@@ -2,7 +2,7 @@ import { gql } from 'apollo-boost';
 import { config } from '@/core/config';
 
 enum Filters {
-  FIRST_100_ITEMS = 100,
+  FIRST_ITEMS = 100,
 }
 
 export const getPostByIssue = (issueNumber: string) => gql`{
@@ -18,13 +18,13 @@ export const getPostByIssue = (issueNumber: string) => gql`{
         avatarUrl
         login
       }
-      labels(first: ${Filters.FIRST_100_ITEMS}) {
+      labels(first: ${Filters.FIRST_ITEMS}) {
         nodes {
           name
           color
         }
       }
-      reactions(first:${Filters.FIRST_100_ITEMS}){
+      reactions(first:${Filters.FIRST_ITEMS}){
         nodes {
           content
           user {

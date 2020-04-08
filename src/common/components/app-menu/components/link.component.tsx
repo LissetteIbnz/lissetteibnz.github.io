@@ -15,10 +15,8 @@ export const Link: React.FC<LinkProps> = ({ label, path }) => {
   });
 
   return (
-    <li>
-      <h2 className={cx(classes.link, match && classes.active)}>
-        <RouterLink to={path}>{label}</RouterLink>
-      </h2>
-    </li>
+    <RouterLink className={cx(classes.link, match && classes.active)} to={path}>
+      {label}
+    </RouterLink>
   );
 };
