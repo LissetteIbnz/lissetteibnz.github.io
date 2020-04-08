@@ -1,12 +1,15 @@
 export const baseRoutes = {
-  root: '/',
   home: '/home',
-  about: '/about',
   blog: '/blog',
-  blogPost: '/blog/:title/:issueNumber',
-  cv: '/cv',
   projects: '/projects',
+  aboutMe: '/about-me',
 };
 
-export type SwitchRoutes = typeof baseRoutes;
-export type BaseRoutes = Omit<SwitchRoutes, 'root' | 'blogPost'>;
+export const switchRoutes = {
+  ...baseRoutes,
+  root: '/',
+  blogPost: '/blog/:title/:issueNumber',
+};
+
+export type BaseRoutes = typeof baseRoutes;
+export type SwitchRoutes = typeof switchRoutes;
