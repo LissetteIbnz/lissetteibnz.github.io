@@ -1,29 +1,25 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-const helpers = require('./helpers');
+const Dotenv = require('dotenv-webpack');
 const hljs = require('highlight.js');
+const helpers = require('./helpers');
 
 module.exports = merge(
   {},
   {
-    context: helpers.resolveFromRootPath('src'),
+    context: helpers.srcPath,
     resolve: {
       alias: {
-        '@': helpers.resolveFromRootPath('src'),
-        content: helpers.resolveFromRootPath('content'),
-        // '@material-ui/core': '@material-ui/core/es',
-        // assets: helpers.resolveFromRootPath('src/assets'),
-        // common: helpers.resolveFromRootPath('src/common'),
-        // core: helpers.resolveFromRootPath('src/core'),
-        // layouts: helpers.resolveFromRootPath('src/layouts'),
-        // pods: helpers.resolveFromRootPath('src/pods'),
-        // scenes: helpers.resolveFromRootPath('src/scenes'),
-        // 'common-app': helpers.resolveFromRootPath('src/common-app'),
+        '@': helpers.srcPath,
+        content: helpers.contentPath,
       },
       extensions: ['.js', '.ts', '.tsx'],
     },
     entry: {
-      baseStyles: ['./base.css', './app.css'],
+      baseStyles: [
+        `${helpers.srcAssetsPath}/markdown-base.css`,
+        `${helpers.srcAssetsPath}/app.css`,
+      ],
       app: ['regenerator-runtime/runtime', './index.tsx'],
     },
     module: {
@@ -69,9 +65,11 @@ module.exports = merge(
     },
     plugins: [
       new HtmlWebpackPlugin({
-        // favicon: 'assets/favicon.ico',
         filename: 'index.html',
         template: 'index.html',
+      }),
+      new Dotenv({
+        path: '.env',
       }),
     ],
   }

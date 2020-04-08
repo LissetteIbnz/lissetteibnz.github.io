@@ -1,5 +1,4 @@
 const merge = require('webpack-merge');
-// const Dotenv = require('dotenv-webpack');
 const base = require('./base');
 const helpers = require('./helpers');
 
@@ -19,7 +18,7 @@ module.exports = merge.strategy({
     app: hotReloadingEntries,
   },
   output: {
-    path: helpers.resolveFromRootPath('dist'),
+    path: helpers.distPath,
     filename: '[name].js',
   },
   devServer: {
@@ -29,18 +28,15 @@ module.exports = merge.strategy({
     stats: 'minimal',
     hot: true,
   },
-  plugins: [
-    // new Dotenv({
-    //   path: 'dev.env',
-    // }),
-  ],
   module: {
     rules: [
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: 'img/[name].[ext]',
+          name: '[name].[ext]',
+          outputPath: helpers.publicImagesPathRelative,
+          publicPath: `/${helpers.publicImagesPathRelative}`,
         },
       },
       {

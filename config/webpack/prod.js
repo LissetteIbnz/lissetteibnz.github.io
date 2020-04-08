@@ -1,8 +1,7 @@
 const merge = require('webpack-merge');
-// const Dotenv = require('dotenv-webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const base = require('./base');
 const helpers = require('./helpers');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(base, {
   mode: 'production',
@@ -26,9 +25,6 @@ module.exports = merge(base, {
     ],
   },
   plugins: [
-    // new Dotenv({
-    //   path: 'prod.env',
-    // }),
     new MiniCssExtractPlugin({
       filename: './dist/css/[chunkhash].[name].css',
     }),
