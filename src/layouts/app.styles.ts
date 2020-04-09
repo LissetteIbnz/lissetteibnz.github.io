@@ -1,6 +1,8 @@
 import { css } from 'emotion';
 import { theme } from '@/core/theme';
 
+const hightHeader = '66px';
+
 export const container = css`
   display: flex;
   flex-direction: column;
@@ -15,8 +17,9 @@ export const main = css`
   margin: 2rem auto 0px;
   padding: 7rem 10px 10px;
 
-  @media screen and (max-width: ${theme.breakpoints.s}) {
+  ${theme.breakpoints.bpMaxMD} {
     width: 100%;
-    margin: 0 auto;
+    margin: ${hightHeader} auto 0;
+    padding: 0;
   }
 `;

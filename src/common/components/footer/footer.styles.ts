@@ -15,8 +15,9 @@ export const root = css`
     margin-left: 20px;
   }
 
-  @media screen and (max-width: ${theme.breakpoints.l}) {
+  ${theme.breakpoints.bpMaxMD} {
     height: auto;
+    margin-top: 1.4rem;
     padding: 1rem 0;
     flex-wrap: wrap;
     justify-content: center;

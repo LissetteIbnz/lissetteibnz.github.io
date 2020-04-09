@@ -14,7 +14,7 @@ export const fixed = css`
   min-height: 50px;
   padding: 20px 0;
 
-  @media screen and (max-width: ${theme.breakpoints.l}) {
+  ${theme.breakpoints.bpMaxMD} {
     padding: 0;
   }
 `;
@@ -57,7 +57,7 @@ export const container = css`
       color: ${baseColor};
     }
 
-    @media screen and (max-width: ${theme.breakpoints.l}) {
+    ${theme.breakpoints.bpMaxMD} {
       &:not(:first-child) {
         display: none;
       }
@@ -66,7 +66,7 @@ export const container = css`
 `;
 
 export const responsive = css`
-  @media screen and (max-width: ${theme.breakpoints.l}) {
+  ${theme.breakpoints.bpMaxMD} {
     flex-direction: column;
     align-items: center;
     & a:not(:first-child) {

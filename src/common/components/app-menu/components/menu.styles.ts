@@ -5,7 +5,7 @@ export const menu = css`
   display: none;
   cursor: pointer;
 
-  @media screen and (max-width: ${theme.breakpoints.l}) {
+  ${theme.breakpoints.bpMaxMD} {
     display: inline-block;
     position: absolute;
     right: 0;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
-import { MarkdownViewer, Loader, LazyImage } from '@/common/components';
+import { MarkdownViewer, Loader, LazyImage, Container } from '@/common/components';
 import { usePost } from './api';
 import { Author, FooterActions } from './components';
 
@@ -31,10 +31,12 @@ export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
         alt={post.title}
         description="Photo by <a href='https://unsplash.com/@fhanspach'>Felix Hanspach</a>"
       />
-      {renderTitle()}
-      <Author post={post} />
-      {renderMarkdown()}
-      <FooterActions urlGitHub={post.urlGitHub} />
+      <Container>
+        {renderTitle()}
+        <Author post={post} />
+        {renderMarkdown()}
+        <FooterActions urlGitHub={post.urlGitHub} />
+      </Container>
     </Loader>
   );
 };
