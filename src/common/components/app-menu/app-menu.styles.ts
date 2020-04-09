@@ -13,37 +13,64 @@ export const fixed = css`
   z-index: 1030;
   min-height: 50px;
   padding: 20px 0;
+
+  @media screen and (max-width: ${theme.breakpoints.l}) {
+    padding: 0;
+  }
 `;
 
 export const container = css`
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
 
-  #logo {
-    color: ${baseColor};
-    font-size: 1.5rem;
-    span {
-      font-style: italic;
-      color: ${accentColor};
-    }
+  & > div {
+    padding: 0;
+    margin: 15px 26px;
   }
 
   a {
+    padding: 0;
+    margin: 19px 26px;
     font-size: 1.2rem;
     font-weight: normal;
     letter-spacing: 0.5px;
     -webkit-transition: all ease-in-out 0.4s;
     transition: all ease-in-out 0.4s;
-    padding: 0;
-    margin: 15px 20px;
     text-transform: uppercase;
+
+    &:first-child {
+      flex: 1;
+      color: ${baseColor};
+      font-size: 1.5rem;
+      align-self: flex-start;
+      span {
+        font-style: italic;
+        color: ${accentColor};
+      }
+    }
+
     &:hover,
     &:focus {
       color: ${baseColor};
+    }
+
+    @media screen and (max-width: ${theme.breakpoints.l}) {
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+  }
+`;
+
+export const responsive = css`
+  @media screen and (max-width: ${theme.breakpoints.l}) {
+    flex-direction: column;
+    align-items: center;
+    & a:not(:first-child) {
+      display: block;
     }
   }
 `;

@@ -14,8 +14,10 @@ export const Link: React.FC<LinkProps> = ({ label, path }) => {
     exact: false,
   });
 
+  const linkStyles = cx(classes.link, { [classes.active]: Boolean(match) });
+
   return (
-    <RouterLink className={cx(classes.link, match && classes.active)} to={path}>
+    <RouterLink className={linkStyles} to={path}>
       {label}
     </RouterLink>
   );
