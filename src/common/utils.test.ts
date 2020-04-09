@@ -103,8 +103,8 @@ describe('Attributes from markdown =>', () => {
   });
 
   describe('convertAttributesInObject =>', () => {
-    test('should return a valid object from expression', () => {
-      const expression = ``;
+    test('should return an empty object from empty expression', () => {
+      const expression = '';
 
       const expected = {};
 
@@ -112,8 +112,8 @@ describe('Attributes from markdown =>', () => {
     });
 
     test('should return a valid object from expression', () => {
-      const expression = `description: irrelevant description.
-      imagePath: irrelevant path.`;
+      const expression = `description##irrelevant description.
+      imagePath##irrelevant path.`;
 
       const expected = {
         description: 'irrelevant description.',
