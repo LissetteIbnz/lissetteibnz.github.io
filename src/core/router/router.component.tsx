@@ -1,10 +1,12 @@
 import React from 'react';
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { ScrollToTop } from '@/common/hooks';
 import { AboutScene, BlogScene, HomeScene, PostDetailsScene, ProjectsScene } from '@/scenes';
 import { switchRoutes } from './routes';
 
 export const RouterComponent = () => (
   <HashRouter>
+    <ScrollToTop />
     <Switch>
       <Route exact={true} path={switchRoutes.root}>
         <Redirect to={switchRoutes.home} />
