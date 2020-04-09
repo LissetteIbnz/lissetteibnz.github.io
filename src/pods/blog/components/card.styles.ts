@@ -1,4 +1,5 @@
 import { css } from 'emotion';
+import { theme } from '@/core/theme';
 
 export const container = css`
   cursor: pointer;
@@ -6,11 +7,19 @@ export const container = css`
   border-radius: 10px;
   padding: 1.2rem;
   transition: all 0.2s ease 0s;
+
+  ${theme.breakpoints.bpMaxMD} {
+    :first-child {
+      margin-top: 2em;
+    }
+  }
+
   &:not(:last-child) {
     margin-bottom: 5rem;
   }
+
   &:hover {
-    background-color: rgb(245, 245, 245);
+    background-color: #e8e6e6;
   }
 `;
 
@@ -23,6 +32,7 @@ export const header = css`
     display: flex;
     justify-content: start;
     flex-flow: row wrap;
+
     & div {
       font-size: 0.9rem;
       text-transform: uppercase;

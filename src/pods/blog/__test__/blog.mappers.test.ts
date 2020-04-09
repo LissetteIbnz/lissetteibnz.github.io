@@ -42,7 +42,7 @@ describe('mapIssueAmToVM =>', () => {
       content: `Irrelevant bodyText`,
       datePublish: 'March 29, 2020',
       tags: [{ color: '#red', label: 'label 1' }],
-      readingTime: '0 min read',
+      readingTime: '1 min read',
       title: 'Irrelevant title',
     };
 
