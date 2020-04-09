@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const Dotenv = require('dotenv-webpack');
-const hljs = require('highlight.js');
 const helpers = require('./helpers');
 
 module.exports = merge(
@@ -28,22 +27,7 @@ module.exports = merge(
         },
         {
           test: /\.md$/,
-          use: [
-            {
-              loader: 'html-loader',
-            },
-            {
-              loader: 'markdown-loader',
-              options: {
-                highlight: (code, lang) => {
-                  if (!lang || ['text', 'literal', 'nohighlight'].includes(lang)) {
-                    return `<pre class="hljs">${code}</pre>`;
-                  }
-                  return hljs.highlight(lang, code).value;
-                },
-              },
-            },
-          ],
+          use: 'raw-loader',
         },
       ],
     },
