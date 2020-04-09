@@ -1,4 +1,4 @@
-# Hola, soy Sara Lissette 👋
+# Hola, soy Sara Lissette <span class="wave">👋</span>
 
 Soy desarrolladora Frontend y actualmente trabajo de forma remota para Basefactor.
 
