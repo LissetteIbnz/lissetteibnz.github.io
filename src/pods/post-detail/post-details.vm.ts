@@ -19,10 +19,14 @@ interface Attributes {
   imageDescription?: string;
 }
 
-export interface Post {
-  author: string;
-  authorUrl: string;
+interface Author {
+  name: string;
+  url: string;
   avatarUrl: string;
+}
+
+export interface Post {
+  author: Author;
   content: string;
   attributes?: Attributes;
   datePublish: string;
