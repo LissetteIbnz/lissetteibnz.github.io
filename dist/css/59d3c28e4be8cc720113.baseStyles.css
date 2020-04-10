@@ -1,4 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro|Quicksand&display=swap);
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html,
 body {
   width: 100%;
@@ -100,26 +111,5 @@ a:focus {
 
 ul {
   list-style: none;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  cursor: pointer;
-  background: #252525;
 }
 
