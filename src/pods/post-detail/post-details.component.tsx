@@ -1,8 +1,7 @@
 import React from 'react';
-import { css } from 'emotion';
 import { MarkdownViewer, Loader, LazyImage, Container } from '@/common/components';
 import { usePost } from './api';
-import { Author, FooterActions } from './components';
+import { Author, FooterActions, Title } from './components';
 
 interface PostDetailsProps {
   issueNumber: string;
@@ -10,18 +9,6 @@ interface PostDetailsProps {
 
 export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
   const { post, loading } = usePost(issueNumber);
-
-  const renderTitle = () =>
-    post?.title && (
-      <h1
-        className={css`
-          margin: 1rem 0;
-          text-align: center;
-        `}
-      >
-        {post?.title}
-      </h1>
-    );
 
   const renderImage = () =>
     post?.attributes?.imagePath && (
@@ -38,7 +25,7 @@ export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
     <Loader loading={loading}>
       {renderImage()}
       <Container>
-        {renderTitle()}
+        <Title>{post.title}</Title>
         <Author post={post} />
         {renderMarkdown()}
         <FooterActions urlGitHub={post.urlGitHub} />

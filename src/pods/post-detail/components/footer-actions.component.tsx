@@ -31,7 +31,7 @@ export const FooterActions: React.FC<FooterActionsProps> = ({ urlGitHub }) => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      View on GitHub
+      Ver en GitHub
     </a>
   </div>
 );

@@ -3,7 +3,7 @@ import {
   transformedDate,
   extractAttributesFromMD,
   convertAttributesInObject,
-  IsFormattedExpression,
+  isFormattedExpression,
 } from './utils';
 import { AM } from '@/services/api';
 
@@ -63,13 +63,13 @@ describe('Attributes from markdown =>', () => {
     const beginningMark = '<!--';
     const endingMark = '-->';
 
-    test('should false when pass an invalid expression', () => {
-      expect(IsFormattedExpression('', beginningMark, endingMark)).toBeFalsy();
+    test('should be falsy when pass an invalid expression', () => {
+      expect(isFormattedExpression('', beginningMark, endingMark)).toBeFalsy();
     });
 
-    test('should false when pass an invalid expression', () => {
+    test('should be falsy when pass an invalid expression', () => {
       expect(
-        IsFormattedExpression(
+        isFormattedExpression(
           `<!-- description: Paso a paso sobre cómo crear un blog personal alojado en GitHub y posteando mediante issue.
     imgPath: 'Irrelevant path' -->
 

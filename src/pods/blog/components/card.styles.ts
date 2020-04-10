@@ -8,7 +8,7 @@ export const container = css`
   padding: 1.2rem;
   transition: all 0.2s ease 0s;
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.bpMaxSM} {
     :first-child {
       margin-top: 2em;
     }

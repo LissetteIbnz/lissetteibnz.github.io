@@ -32,7 +32,7 @@ export const transformedDate = (expression: string): string => {
   return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 };
 
-export const IsFormattedExpression = (
+export const isFormattedExpression = (
   expression: string,
   beginningMark: string,
   endingMark: string
