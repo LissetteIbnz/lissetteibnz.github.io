@@ -1,6 +1,7 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { useComponentIsMounted } from '@/common/hooks';
+import { MarkdownViewer } from '../md-viewer';
 import * as classes from './lazy-image.styles';
 
 interface LazyImageProps {
@@ -8,7 +9,6 @@ interface LazyImageProps {
   alt: string;
   width?: string;
   height?: string;
-  rounded?: boolean;
   description?: string;
 }
 
@@ -18,7 +18,6 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   description,
   height = '320px',
   width = '100%',
-  rounded = false,
 }) => {
   const isMounted = useComponentIsMounted();
   const [imageSrc, setImageSrc] = React.useState<string>(url);
@@ -58,9 +57,8 @@ export const LazyImage: React.FC<LazyImageProps> = ({
     };
   }, [url, imageSrc, imageRef]);
 
-  const containerStyle = cx(classes.container, rounded && classes.rounded);
   return (
-    <div className={containerStyle}>
+    <div className={classes.wrapper}>
       <img
         ref={setImageRef}
         className={cx(classes.img, {
@@ -73,14 +71,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
         height={height}
         onLoad={onLoad}
       />
-      {description && (
-        <p
-          className={classes.description}
-          dangerouslySetInnerHTML={{
-            __html: description,
-          }}
-        />
-      )}
+      {description && <MarkdownViewer className={classes.description} content={description} />}
     </div>
   );
 };

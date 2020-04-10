@@ -1,17 +1,18 @@
 import { css } from 'emotion';
+import { theme } from '@/core/theme';
 
-export const container = css`
+export const wrapper = css`
   overflow: hidden;
-`;
-
-export const rounded = css`
-  border-radius: 100%;
 `;
 
 export const img = css`
   object-fit: cover;
   transition: all ease 0.3s;
   opacity: 0;
+
+  ${theme.breakpoints.bpMaxSM} {
+    max-height: 200px;
+  }
 `;
 
 export const loading = css`
@@ -24,10 +25,13 @@ export const loaded = css`
 `;
 
 export const description = css`
-  text-align: center;
-  font-size: 14px;
-  margin: 0;
-  a {
-    font-size: inherit;
+  p {
+    padding-top: 0.2em;
+    text-align: center;
+    font-size: 14px;
+    margin: 0;
+    a {
+      font-size: inherit;
+    }
   }
 `;
