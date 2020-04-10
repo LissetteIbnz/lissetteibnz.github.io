@@ -56,11 +56,19 @@ export const container = css`
     &:focus {
       color: ${baseColor};
     }
+  }
 
-    ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.bpMaxMD} {
+    a {
       &:not(:first-child) {
         display: none;
       }
+
+      margin: 15px 26px;
+    }
+
+    & > div {
+      margin: 14px 26px;
     }
   }
 `;

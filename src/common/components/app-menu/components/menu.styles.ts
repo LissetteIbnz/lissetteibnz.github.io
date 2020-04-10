@@ -14,7 +14,7 @@ export const menu = css`
 
   div {
     width: 30px;
-    height: 4px;
+    height: 2px;
     background-color: white;
     margin: 6px 0;
     transition: 0.4s;
@@ -22,7 +22,7 @@ export const menu = css`
 
   &.change div:first-child {
     -webkit-transform: rotate(-45deg) translate(-9px, 5px);
-    transform: rotate(-45deg) translate(-9px, 5px);
+    transform: rotate(-45deg) translate(-7px, 2px);
   }
 
   &.change div:nth-child(2) {
@@ -31,7 +31,7 @@ export const menu = css`
 
   &.change div:last-child {
     -webkit-transform: rotate(45deg) translate(-9px, -6px);
-    transform: rotate(45deg) translate(-9px, -6px);
+    transform: rotate(45deg) translate(-9px, -5px);
   }
 `;
 
