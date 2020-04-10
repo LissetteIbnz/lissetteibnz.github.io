@@ -7,6 +7,7 @@ export const Container: React.FC = ({ children }) => (
     className={css`
       ${theme.breakpoints.bpMaxMD} {
         padding: 0 20px;
+        word-wrap: break-word;
       }
     `}
   >

@@ -4,12 +4,12 @@ import { theme } from '@/core/theme';
 export const wrapper = css`
   overflow: auto;
   font-size: 16px;
+  border-radius: 6px;
   line-height: 1.5em;
 `;
 
 export const pre = css`
-  padding: 10px;
-  border-radius: 6px;
+  padding: 0 10px;
   ${theme.breakpoints.bpMaxMD} {
     width: fit-content;
   }

@@ -12,8 +12,8 @@ interface CodeProps {
 export const Code: React.FC<CodeProps> = ({ language, value }) => (
   <Highlight {...defaultProps} code={value} language={language} theme={theme}>
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
-      <div className={classes.wrapper}>
-        <pre className={cx(className, classes.pre)} style={style}>
+      <div className={classes.wrapper} style={style}>
+        <pre className={cx(className, classes.pre)}>
           {tokens.map((line, i) => (
             <div
               key={i}
