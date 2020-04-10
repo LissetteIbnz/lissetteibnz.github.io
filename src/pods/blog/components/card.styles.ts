@@ -12,10 +12,15 @@ export const container = css`
     :first-child {
       margin-top: 2em;
     }
+
+    padding: 0;
   }
 
   &:not(:last-child) {
-    margin-bottom: 5rem;
+    margin-bottom: 5em;
+    ${theme.breakpoints.bpMaxSM} {
+      margin-bottom: 3em;
+    }
   }
 
   &:hover {
@@ -24,6 +29,10 @@ export const container = css`
 `;
 
 export const header = css`
+  ${theme.breakpoints.bpMaxSM} {
+    display: none;
+  }
+
   display: flex;
   justify-content: space-between;
   align-items: center;
