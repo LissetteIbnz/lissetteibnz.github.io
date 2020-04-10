@@ -1,7 +1,14 @@
 import React from 'react';
 import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { ScrollToTop } from '@/common/hooks';
-import { AboutScene, BlogScene, HomeScene, PostDetailsScene, ProjectsScene } from '@/scenes';
+import {
+  AboutScene,
+  BlogScene,
+  HomeScene,
+  PostDetailsScene,
+  ProjectsScene,
+  NotFoundScene,
+} from '@/scenes';
 import { switchRoutes } from './routes';
 
 export const RouterComponent = () => (
@@ -25,6 +32,9 @@ export const RouterComponent = () => (
       </Route>
       <Route path={switchRoutes.blogPost}>
         <PostDetailsScene />
+      </Route>
+      <Route>
+        <NotFoundScene />
       </Route>
     </Switch>
   </HashRouter>
