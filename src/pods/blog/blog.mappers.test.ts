@@ -1,6 +1,6 @@
 import { AM } from '@/services/api';
-import { mapIssueAMToVM } from '../blog.mappers';
-import { Post } from '../blog.vm';
+import { mapIssueAMToVM } from './blog.mappers';
+import { Post } from './blog.vm';
 
 describe('mapIssueAmToVM =>', () => {
   test('should return an empty array when pass an empty issue list', () => {
@@ -9,7 +9,7 @@ describe('mapIssueAmToVM =>', () => {
     expect(result).toEqual(undefined);
   });
 
-  test('should to convert a valid Post when pass a valid Issue', () => {
+  test('should return a valid Post when pass a valid Issue', () => {
     const issue: AM.Issue = {
       author: {
         avatarUrl: 'url',
