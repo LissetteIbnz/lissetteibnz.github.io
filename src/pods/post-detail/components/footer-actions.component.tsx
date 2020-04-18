@@ -1,5 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
+import { literals } from '@/core/i18n';
 import { Post } from '../post-details.vm';
 
 interface FooterActionsProps {
@@ -31,7 +32,7 @@ export const FooterActions: React.FC<FooterActionsProps> = ({ urlGitHub }) => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      Ver en GitHub
+      {literals.post.showGithub}
     </a>
   </div>
 );

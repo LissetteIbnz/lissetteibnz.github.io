@@ -1,9 +1,10 @@
 import React from 'react';
 import { useHistory, generatePath } from 'react-router-dom';
 import { css } from 'emotion';
+import { switchRoutes } from '@/core/router';
+import { literals } from '@/core/i18n';
 import { Tag } from '../blog.vm';
 import * as classes from './card.styles';
-import { switchRoutes } from '@/core/router';
 
 interface CardProps {
   post: {
@@ -43,8 +44,8 @@ export const Card: React.FC<CardProps> = ({
             ))}
         </div>
         <p>
-          Published {datePublish}
-          <span>{readingTime}</span>
+          {`${literals.post.published} ${datePublish}`}
+          <span>{`${readingTime} ${literals.post.timeToRead}`}</span>
         </p>
       </div>
       <div className={classes.content}>

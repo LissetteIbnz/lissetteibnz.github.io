@@ -7,6 +7,7 @@ import {
   isFormattedExpression,
 } from '@/common/utils';
 import { config } from '@/core/config';
+import { literals } from '@/core/i18n';
 import { Post } from './post-details.vm';
 
 // TODO: Pending to implement reactions and tags found
@@ -22,7 +23,7 @@ export const mapIssueAMToPostVM = (issue: AM.Issue): Post =>
       ? (convertAttributesInObject(extractAttributesFromMD(issue.body)) as Post['attributes'])
       : undefined,
     datePublish: transformedDate(issue.updatedAt),
-    readingTime: getReadingTime(issue.body),
+    readingTime: `${getReadingTime(issue.body)} ${literals.post.timeToRead}`,
     title: issue.title,
     urlGitHub: issue.url,
     reactions: [],

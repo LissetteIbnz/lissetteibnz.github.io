@@ -54,7 +54,7 @@ describe('transformedDate =>', () => {
   test("should return a string with follow format 'DayOfWeek, day month year'", () => {
     const validDate = new Date('03/29/2020');
     const result = transformedDate(validDate.toString());
-    expect(result).toEqual('March 29, 2020');
+    expect(result).toEqual('29 Marzo 2020');
   });
 });
 

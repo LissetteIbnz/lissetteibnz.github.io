@@ -1,12 +1,17 @@
 import React from 'react';
 import * as classes from './loader.styles';
+import { literals } from '@/core/i18n';
 
 interface LoaderProps {
   loading: boolean;
   message?: string;
 }
 
-export const Loader: React.FC<LoaderProps> = ({ loading, message = 'loading', children }) =>
+export const Loader: React.FC<LoaderProps> = ({
+  loading,
+  message = literals.common.loading,
+  children,
+}) =>
   loading ? (
     <div className={classes.root}>
       <svg

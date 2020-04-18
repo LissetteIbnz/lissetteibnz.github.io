@@ -9,27 +9,27 @@ export const normalizeString = (expression: string) =>
   expression.replace(/([a-z])([A-Z])/g, '$1 $2');
 
 export const getReadingTime = (content: string): string =>
-  content.length && `${Math.ceil(readingTime(content).minutes)} min read`;
+  content.length && Math.ceil(readingTime(content).minutes).toString();
 
 export const normalizeColor = (color: string): string =>
   color.length && color.startsWith('#') ? color : `#${color}`;
 
 export const transformedDate = (expression: string): string => {
   enum months {
-    'January',
-    'February',
-    'March',
-    'April',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Enero',
+    'Febrero',
+    'Marzo',
+    'Abril',
+    'Junio',
+    'Julio',
+    'Agosto',
+    'Septiembre',
+    'Octubre',
+    'Noviembre',
+    'Diciembre',
   }
   const date = new Date(expression);
-  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
 };
 
 export const isFormattedExpression = (
