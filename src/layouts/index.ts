@@ -1,2 +1,3 @@
-export { AppLayout } from './app.layout';
-export { CenteredLayout } from './centered.layout';
+export * from './app.layout';
+export * from './centered.layout';
+export * from './minimal.layout';

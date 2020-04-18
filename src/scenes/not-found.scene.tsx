@@ -1,9 +1,9 @@
 import React from 'react';
-import { AppLayout } from '@/layouts';
+import { MinimalLayout } from '@/layouts';
 import { NotFound } from '@/pods/not-found';
 
 export const NotFoundScene = () => (
-  <AppLayout>
+  <MinimalLayout>
     <NotFound />
-  </AppLayout>
+  </MinimalLayout>
 );
