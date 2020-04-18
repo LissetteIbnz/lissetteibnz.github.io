@@ -17,5 +17,7 @@ export const literals = {
   footer: {
     madeWith: 'Hecho con',
     inTenerife: 'en Tenerife',
+    visitMy: 'Visita mi',
+    sendMeAnEmail: 'Envíame un email',
   },
 } as const;

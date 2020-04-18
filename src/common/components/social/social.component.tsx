@@ -1,18 +1,28 @@
 import React from 'react';
 import * as classes from './social.styles';
+import { literals } from '@/core/i18n';
 
-const Link: React.FC<SocialProps> = ({ children, url }) => (
-  <a className={classes.anchor} href={url} target="_blank" rel="noopener noreferrer">
+const Link: React.FC<SocialProps & { title: string }> = ({ children, url, title }) => (
+  <a
+    className={classes.anchor}
+    aria-label={title}
+    href={url}
+    title={title}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     {children}
   </a>
 );
+
+const visitMySocial = (socialLink: string) => `${literals.footer.visitMy} ${socialLink}`;
 
 interface SocialProps {
   url: string;
 }
 
 export const Twitter: React.FC<SocialProps> = ({ url }) => (
-  <Link aria-label="Visit my Twitter" url={url}>
+  <Link title={visitMySocial(Twitter.name)} url={url}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -24,7 +34,7 @@ export const Twitter: React.FC<SocialProps> = ({ url }) => (
 );
 
 export const LinkedIn: React.FC<SocialProps> = ({ url }) => (
-  <Link aria-label="Visit my LinkedIn" url={url}>
+  <Link title={visitMySocial(LinkedIn.name)} url={url}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -36,7 +46,7 @@ export const LinkedIn: React.FC<SocialProps> = ({ url }) => (
 );
 
 export const GitHub: React.FC<SocialProps> = ({ url }) => (
-  <Link aria-label="Visit my GitHub" url={url}>
+  <Link title={visitMySocial(GitHub.name)} url={url}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -48,7 +58,7 @@ export const GitHub: React.FC<SocialProps> = ({ url }) => (
 );
 
 export const Email: React.FC<SocialProps> = ({ url }) => (
-  <Link aria-label="Send me an email" url={url}>
+  <Link title={literals.footer.sendMeAnEmail} url={url}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"

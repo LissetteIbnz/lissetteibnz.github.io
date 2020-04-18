@@ -7,10 +7,13 @@ export const link = css`
   position: relative;
   color: ${baseColor};
   text-decoration: none;
+  user-select: none;
+
   &:hover,
   &:focus {
     color: ${baseColor};
   }
+
   &::before {
     content: '';
     position: absolute;
@@ -25,6 +28,7 @@ export const link = css`
     -webkit-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
   }
+
   &:hover::before {
     visibility: visible;
     -webkit-transform: scaleX(1.2);
