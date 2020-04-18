@@ -26,7 +26,11 @@ export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
       {renderImage()}
       <Container>
         <Title>{post.title}</Title>
-        <Author post={post} />
+        <Author
+          author={post.author}
+          datePublish={post.datePublish}
+          readingTime={post.readingTime}
+        />
         {renderMarkdown()}
         <FooterActions urlGitHub={post.urlGitHub} />
       </Container>

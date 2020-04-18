@@ -1,5 +1,5 @@
+import { AM } from '@/services/api';
 import { mapIssueAMToPostVM } from './post-details.mappers';
-import { Issue } from '@/services/api/api.model';
 import { Post } from './post-details.vm';
 
 describe('mapIssueAMToPostVM =>', () => {
@@ -25,7 +25,7 @@ describe('mapIssueAMToPostVM =>', () => {
       urlGitHub: 'irrelevant url',
     };
 
-    const issue: Issue = {
+    const issue: AM.Issue = {
       author: {
         avatarUrl: 'irrelevant avatarUrl',
         login: 'irrelevant login',
