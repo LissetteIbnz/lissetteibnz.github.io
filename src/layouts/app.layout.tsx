@@ -1,5 +1,5 @@
 import React from 'react';
-import { Footer, AppMenu } from '@/common/components';
+import { Footer, AppMenu, ButtonTop } from '@/common/components';
 import * as classes from './app.styles';
 
 export const AppLayout: React.FC = ({ children }) => {
@@ -8,6 +8,7 @@ export const AppLayout: React.FC = ({ children }) => {
       <AppMenu />
       <main className={classes.main}>{children}</main>
       <Footer />
+      <ButtonTop />
     </div>
   );
 };
