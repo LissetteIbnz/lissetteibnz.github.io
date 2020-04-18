@@ -40,9 +40,9 @@ describe('mapIssueAmToVM =>', () => {
     const expected: Post = {
       id: 1,
       content: `Irrelevant bodyText`,
-      datePublish: 'March 29, 2020',
+      datePublish: '29 Marzo 2020',
       tags: [{ color: '#red', label: 'label 1' }],
-      readingTime: '1 min read',
+      readingTime: '1',
       title: 'Irrelevant title',
     };
 
