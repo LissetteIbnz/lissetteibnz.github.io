@@ -1,7 +1,6 @@
 const merge = require('webpack-merge');
 const base = require('./base');
 const helpers = require('./helpers');
-
 const hotReloadingEntries = ['react-hot-loader/patch'];
 
 module.exports = merge.strategy({

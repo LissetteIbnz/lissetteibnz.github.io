@@ -7,7 +7,7 @@ module.exports = merge(base, {
   mode: 'production',
   output: {
     path: helpers.resolveFromRootPath(''),
-    filename: './dist/js/[name].[chunkhash].js',
+    filename: `${helpers.outputBundlesPath}/[name].[chunkhash].js`,
   },
   module: {
     rules: [
@@ -15,7 +15,7 @@ module.exports = merge(base, {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: './dist/images/[name].[ext]?[hash]',
+          name: `${helpers.outputImagesPath}/[name].[ext]?[hash]`,
         },
       },
       {
@@ -26,7 +26,7 @@ module.exports = merge(base, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './dist/css/[chunkhash].[name].css',
+      filename: `${helpers.outputStylesPath}/[chunkhash].[name].css`,
     }),
   ],
 });
