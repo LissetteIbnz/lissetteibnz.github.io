@@ -24,8 +24,10 @@ export const button = css`
   transition: ${theme.transition.ease};
 
   &:hover {
-    background-color: ${theme.colors.purpleLighten};
-    box-shadow: ${theme.shadows[3]};
+    background: ${theme.colors.purpleLighten};
+    box-shadow: 0 0 1px 7px rgba(210, 0, 104, 0.15);
+    color: #fff;
+    outline: 0;
   }
 `;
 

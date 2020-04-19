@@ -4,7 +4,6 @@ import { theme } from '@/core/theme';
 export const root = css`
   background: ${theme.colors.purple};
   color: white;
-  margin-top: 70px;
   padding: 4rem;
   height: 80px;
   display: flex;
@@ -17,7 +16,6 @@ export const root = css`
 
   ${theme.breakpoints.bpMaxMD} {
     height: auto;
-    margin-top: 1.4rem;
     padding: 1rem 0;
     flex-wrap: wrap;
     justify-content: center;

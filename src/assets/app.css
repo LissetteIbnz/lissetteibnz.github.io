@@ -31,43 +31,49 @@ body {
 
 h1,
 h2,
-p,
-a {
-  color: #222426;
-  text-rendering: optimizeLegibility;
-}
-
-h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
-  font-weight: 300;
   font-family: 'Quicksand', 'Roboto', sans-serif;
+  color: #222426;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 1.66667rem 0 0.83333rem;
+  text-rendering: optimizeLegibility;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 2.22222rem;
+  margin: 0 0 1.66667rem;
   font-weight: 600;
   line-height: 50px;
 }
 
 h2 {
-  font-size: 30px;
-  line-height: 40px;
-  margin-top: 0;
+  font-size: 2rem;
 }
 
 h3 {
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 32px;
+  font-size: 1.66667rem;
 }
 
 h4 {
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 1.33333rem;
+}
+
+h5 {
+  font-size: 1.11111rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p,
+a {
+  color: #222426;
+  text-rendering: optimizeLegibility;
 }
 
 p {
@@ -77,21 +83,12 @@ p {
   letter-spacing: normal;
 }
 
-@media screen and (max-width: 1000px) {
-  h1 {
-    font-size: 36px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-}
-
 /*---------------------------------------
   GENERAL
 -----------------------------------------*/
 
 html {
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
 

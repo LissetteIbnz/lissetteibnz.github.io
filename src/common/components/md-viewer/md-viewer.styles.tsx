@@ -26,4 +26,10 @@ export const base = css`
     padding: 0 1em;
     font-style: italic;
   }
+
+  code {
+    background: ${theme.colors.purpleLighten};
+    border-radius: 5px;
+    padding: 0.1em 0.3em;
+  }
 `;

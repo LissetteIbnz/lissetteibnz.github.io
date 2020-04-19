@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 
 export const root = css`
-  padding-top: 1.2rem;
+  height: 4rem;
 `;
 
 export const link = css`

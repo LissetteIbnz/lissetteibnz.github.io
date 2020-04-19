@@ -16,11 +16,9 @@ export const container = css`
     padding: 0;
   }
 
-  &:not(:last-child) {
-    margin-bottom: 5em;
-    ${theme.breakpoints.bpMaxSM} {
-      margin-bottom: 3em;
-    }
+  margin-bottom: 5em;
+  ${theme.breakpoints.bpMaxSM} {
+    margin-bottom: 3em;
   }
 
   &:hover {
