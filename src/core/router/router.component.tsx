@@ -5,9 +5,9 @@ import {
   AboutScene,
   BlogScene,
   HomeScene,
+  NotFoundScene,
   PostDetailsScene,
   ProjectsScene,
-  NotFoundScene,
 } from '@/scenes';
 import { switchRoutes } from './routes';
 
