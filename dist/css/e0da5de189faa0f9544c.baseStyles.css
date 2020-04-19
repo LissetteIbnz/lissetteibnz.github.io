@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Maven + Pro|Quicksand&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Maven+Pro|Quicksand&display=swap);
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -176,3 +176,4 @@ ul {
     animation-iteration-count: 1 !important;
   }
 }
+
