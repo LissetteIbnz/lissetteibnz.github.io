@@ -9,8 +9,8 @@ export const button = css`
   transform-origin: center center;
   background-color: ${theme.colors.purple};
   border-color: ${theme.colors.purple};
-  height: 54px;
-  width: 54px;
+  height: 46px;
+  width: 46px;
   box-shadow: ${theme.shadows[1]};
   transition-duration: 0.28s;
   transition-property: box-shadow, transform, opacity;
