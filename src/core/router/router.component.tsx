@@ -27,9 +27,9 @@ export const RouterComponent = () => (
       <Route exact={true} path={switchRoutes.blog}>
         <BlogScene />
       </Route>
-      <Route exact={true} path={switchRoutes.projects}>
+      {/* <Route exact={true} path={switchRoutes.projects}>
         <ProjectsScene />
-      </Route>
+      </Route> */}
       <Route path={switchRoutes.blogPost}>
         <PostDetailsScene />
       </Route>
