@@ -4,6 +4,7 @@ import { theme } from '@/core/theme';
 export const menu = css`
   display: none;
   cursor: pointer;
+  outline: 0;
 
   ${theme.breakpoints.bpMaxMD} {
     display: inline-block;
@@ -17,6 +18,7 @@ export const menu = css`
     height: 2px;
     background-color: white;
     margin: 6px 0;
+    outline: 0;
     transition: 0.4s;
   }
 
