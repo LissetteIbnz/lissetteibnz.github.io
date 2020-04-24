@@ -58,7 +58,7 @@ Las tecnologías sobre las que he impartido estos cursos son: **JavaScript**, **
 
 ### Fullstack developer - Ultebra Solutions
 
-Tenerife, marzo 2019 - abril 2019
+Tenerife, marzo 2018 - diciembre 2018
 
 Trabajé como desarrolladora Fullstack para un cliente orientado al mundo del automóvil. Mi principal cometido fue desarrollar el frontal del producto, implementando Vue y .Core. Aunque también realizaba distintas tareas del backend.
 
