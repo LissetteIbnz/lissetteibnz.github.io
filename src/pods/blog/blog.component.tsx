@@ -1,18 +1,17 @@
 import React from 'react';
-import { Loader } from '@/common/components';
-import { usePostsList } from './api/';
 import { Card } from './components';
+import { Post } from './blog.vm';
 
-export const Blog = () => {
-  const { posts, loading } = usePostsList();
+interface BlogProps {
+  posts: Post[];
+}
 
-  return (
-    <Loader loading={loading}>
-      {posts.map((post, index) => (
-        <Card key={index} post={post}>
-          {post.content}
-        </Card>
-      ))}
-    </Loader>
-  );
-};
+export const BlogComponent: React.FC<BlogProps> = ({ posts }) => (
+  <>
+    {posts.map((post, index) => (
+      <Card key={index} post={post}>
+        {post.content}
+      </Card>
+    ))}
+  </>
+);

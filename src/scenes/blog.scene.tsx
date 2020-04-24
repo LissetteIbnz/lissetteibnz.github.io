@@ -1,12 +1,12 @@
 import React from 'react';
-import { Blog } from '@/pods/blog';
 import { AppLayout } from '@/layouts';
 import { Container } from '@/common/components';
+import { BlogContainer } from '@/pods/blog';
 
 export const BlogScene = () => (
   <AppLayout>
     <Container>
-      <Blog />
+      <BlogContainer />
     </Container>
   </AppLayout>
 );
