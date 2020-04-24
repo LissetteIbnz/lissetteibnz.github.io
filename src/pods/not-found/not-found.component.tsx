@@ -1,7 +1,7 @@
 import React from 'react';
 import * as classes from './not-found.styles';
 
-export const NotFound = () => (
+export const NotFoundComponent = () => (
   <div className={classes.maskImage}>
     <div className={classes.text}>
       404

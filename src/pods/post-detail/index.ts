@@ -1,2 +1,1 @@
-export * from './post-details.component';
-export * from './post-details.vm';
+export * from './post-details.container';
