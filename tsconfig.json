@@ -18,5 +18,5 @@
       "content/*": ["content/*"]
     }
   },
-  "include": ["./src/**/*", "./config/test/setup.ts", "./global.types.d.ts"]
+  "include": ["./src/**/*", "./config/test/setup.ts", "src/global.types.d.ts"]
 }
