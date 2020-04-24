@@ -1,15 +1,13 @@
 import React from 'react';
-import { MarkdownViewer, Loader, LazyImage, Container } from '@/common/components';
-import { usePost } from './api';
+import { MarkdownViewer, LazyImage, Container } from '@/common/components';
 import { Author, FooterActions, Title } from './components';
+import { Post } from './post-details.vm';
 
 interface PostDetailsProps {
-  issueNumber: string;
+  post: Post;
 }
 
-export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
-  const { post, loading } = usePost(issueNumber);
-
+export const PostDetailsComponent: React.FC<PostDetailsProps> = ({ post }) => {
   const renderImage = () =>
     post?.attributes?.imagePath && (
       <LazyImage
@@ -22,7 +20,7 @@ export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
   const renderMarkdown = () => post?.content && <MarkdownViewer content={post.content} />;
 
   return (
-    <Loader loading={loading}>
+    <>
       {renderImage()}
       <Container>
         <Title>{post.title}</Title>
@@ -34,6 +32,6 @@ export const PostDetails: React.FC<PostDetailsProps> = ({ issueNumber }) => {
         {renderMarkdown()}
         <FooterActions urlGitHub={post.urlGitHub} />
       </Container>
-    </Loader>
+    </>
   );
 };

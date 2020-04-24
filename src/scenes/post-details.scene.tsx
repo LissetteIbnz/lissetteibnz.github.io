@@ -1,14 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import { PostDetails, UrlParams } from '@/pods/post-detail';
 import { AppLayout } from '@/layouts';
+import { PostDetailsContainer } from '@/pods/post-detail';
 
-export const PostDetailsScene = () => {
-  const { issueNumber } = useParams<UrlParams>();
-
-  return (
-    <AppLayout>
-      <PostDetails issueNumber={issueNumber} />
-    </AppLayout>
-  );
-};
+export const PostDetailsScene = () => (
+  <AppLayout>
+    <PostDetailsContainer />
+  </AppLayout>
+);
