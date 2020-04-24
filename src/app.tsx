@@ -1,14 +1,17 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
 import { ApolloProvider } from '@apollo/react-hooks';
-import { RouterComponent } from '@/core/router';
 import { client } from '@/services/api';
-import { ErrorBoundary } from '@/common/components';
+import { RouterComponent } from '@/core/router';
+import { ErrorBoundary, LoaderProvider, Loader } from '@/common/components';
 
 const App: React.FC = () => (
   <ApolloProvider client={client}>
     <ErrorBoundary>
-      <RouterComponent />
+      <LoaderProvider>
+        <Loader />
+        <RouterComponent />
+      </LoaderProvider>
     </ErrorBoundary>
   </ApolloProvider>
 );

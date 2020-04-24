@@ -1,6 +1,6 @@
 import { css, keyframes } from 'emotion';
 
-export const color = '#333'; //'#c47abd';
+export const color = '#333';
 
 const swing = keyframes`
   50% {
