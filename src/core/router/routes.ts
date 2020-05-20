@@ -8,7 +8,7 @@ export const baseRoutes = {
 export const switchRoutes = {
   ...baseRoutes,
   root: '/',
-  blogPost: '/blog/:title/:issueNumber',
+  blogPost: `${baseRoutes.blog}/:issueNumber`,
 };
 
 export type BaseRoutes = typeof baseRoutes;
