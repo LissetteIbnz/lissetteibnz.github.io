@@ -1,30 +1,19 @@
 import React from 'react';
-import { useHistory, generatePath } from 'react-router-dom';
 import { css } from 'emotion';
-import { switchRoutes } from '@/core/router';
 import { literals } from '@/core/i18n';
-import { Tag } from '../blog.vm';
+import { Post } from '../blog.vm';
 import * as classes from './card.styles';
 
 interface CardProps {
-  post: {
-    id: number;
-    tags?: Tag[];
-    readingTime: string;
-    title: string;
-    datePublish: string;
-  };
+  post: Post;
+  loadPostById: ({ title, id }: Post) => void;
 }
 
-export const Card: React.FC<CardProps> = ({
-  post: { datePublish, readingTime, title, tags, id },
-  children,
-}) => {
-  const history = useHistory();
+export const Card: React.FC<CardProps> = ({ post, loadPostById, children }) => {
+  const { datePublish, readingTime, title, tags } = post;
 
   const handleOnClick = () => {
-    const path = generatePath(switchRoutes.blogPost, { title, issueNumber: id });
-    history.push(path);
+    loadPostById(post);
   };
 
   return (

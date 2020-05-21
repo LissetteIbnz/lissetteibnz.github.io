@@ -14,9 +14,9 @@ export interface Reaction {
 export interface Issue {
   author: Author;
   body: string;
-  bodyHTML: string;
+  bodyHTML?: string;
   bodyText: string;
-  id: number;
+  id?: number;
   labels?: { nodes: Label[] };
   number: number;
   reactions?: { nodes: Reaction[] };
@@ -24,3 +24,16 @@ export interface Issue {
   updatedAt: string;
   url?: string;
 }
+
+export const createEmptyIssue = (): Issue => ({
+  author: {
+    avatarUrl: '',
+    login: '',
+    url: '',
+  },
+  body: '',
+  bodyText: '',
+  number: 0,
+  title: '',
+  updatedAt: '',
+});

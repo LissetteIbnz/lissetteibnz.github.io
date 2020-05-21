@@ -7,17 +7,16 @@ export const container = css`
   border-radius: 10px;
   padding: 1.2rem;
   transition: all 0.2s ease 0s;
+  margin-bottom: 5em;
 
-  ${theme.breakpoints.bpMaxSM} {
+  ${theme.breakpoints.bpMaxMD} {
     :first-child {
       margin-top: 2em;
     }
-
-    padding: 0;
   }
 
-  margin-bottom: 5em;
   ${theme.breakpoints.bpMaxSM} {
+    padding: 0;
     margin-bottom: 3em;
   }
 
@@ -34,7 +33,6 @@ export const header = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1.6rem;
   & > div {
     display: flex;
     justify-content: start;

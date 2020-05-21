@@ -1,3 +1,5 @@
+import * as mockConfig from '@/core/config';
+import * as AM from '@/common/models';
 import {
   getValidLabels,
   transformedDate,
@@ -5,7 +7,6 @@ import {
   convertAttributesInObject,
   isFormattedExpression,
 } from './utils';
-import { AM } from '@/services/api';
 
 describe('getValidLabels =>', () => {
   test('should return an empty collection when pass an empty labels list', () => {
@@ -65,9 +66,15 @@ describe('Attributes from markdown =>', () => {
 
     test('should be falsy when pass an invalid expression', () => {
       expect(isFormattedExpression('', beginningMark, endingMark)).toBeFalsy();
+      expect(
+        isFormattedExpression(`${beginningMark} irrelevant text`, beginningMark, endingMark)
+      ).toBeFalsy();
+      expect(
+        isFormattedExpression(`irrelevant text${endingMark}`, beginningMark, endingMark)
+      ).toBeFalsy();
     });
 
-    test('should be falsy when pass an invalid expression', () => {
+    test('should be truthy when pass a valid expression', () => {
       expect(
         isFormattedExpression(
           `<!-- description: Paso a paso sobre cómo crear un blog personal alojado en GitHub y posteando mediante issue.
@@ -78,8 +85,13 @@ describe('Attributes from markdown =>', () => {
           endingMark
         )
       ).toBeTruthy();
+
+      expect(
+        isFormattedExpression(`<!-- --> Irrelevant text`, beginningMark, endingMark)
+      ).toBeTruthy();
     });
   });
+
   describe('extractAttributesFromMD:', () => {
     const markdown = `<!-- description: Paso a paso sobre cómo crear un blog personal alojado en GitHub y posteando mediante issue.
     imgPath: 'Irrelevant path' -->
@@ -112,13 +124,15 @@ describe('Attributes from markdown =>', () => {
     });
 
     test('should return a valid object from expression', () => {
-      const expression = `description##irrelevant description.
-      imagePath##irrelevant path.`;
+      const expression = `description%%irrelevant description.
+      imagePath%%irrelevant path.`;
 
       const expected = {
         description: 'irrelevant description.',
         imagePath: 'irrelevant path.',
       };
+
+      mockConfig.config.separatedAttribute = '%%';
 
       expect(convertAttributesInObject(expression)).toEqual(expected);
     });

@@ -5,6 +5,8 @@ import { Post } from './post-details.vm';
 
 interface PostDetailsProps {
   post: Post;
+  comment: string;
+  updateComment: (comment: string) => void;
 }
 
 export const PostDetailsComponent: React.FC<PostDetailsProps> = ({ post }) => {

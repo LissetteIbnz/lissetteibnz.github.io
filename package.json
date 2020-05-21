@@ -13,7 +13,7 @@
     "type-check:watch": "npm run type-check -- --watch",
     "test": "jest -c ./config/test/jest.js --verbose",
     "test:watch": "npm run test -- --watchAll -i",
-    "clean": "rimraf dist && rimraf index.html",
+    "clean": "rimraf dist && rimraf index.html && rimraf *.png",
     "lint": "eslint src --ext .ts,.tsx ",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -55,6 +55,7 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
     "html-webpack-plugin": "^4.0.2",
     "husky": "^4.2.5",
     "jest": "^25.2.4",

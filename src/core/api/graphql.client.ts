@@ -1,5 +1,5 @@
 import ApolloClient from 'apollo-boost';
-import { config } from '../../core/config';
+import { config } from '@/core/config';
 
 const url = 'https://api.github.com/graphql';
 

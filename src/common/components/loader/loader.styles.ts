@@ -34,6 +34,7 @@ const steamSmall = keyframes`
   `;
 
 export const root = css`
+  background-color: #fafafa;
   position: absolute;
   top: 0;
   left: 0;

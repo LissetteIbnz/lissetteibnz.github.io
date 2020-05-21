@@ -1,7 +1,48 @@
 import { css } from 'emotion';
 
 export const root = css`
-  height: 4rem;
+  margin-bottom: 2rem;
+`;
+
+export const comment = css`
+  padding: 1rem 0;
+`;
+
+export const previewMarkdown = css`
+  padding: 0.8rem 1.2rem;
+  display: block;
+  color: #555;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  height: 213px;
+  p {
+    margin: 0 0 0.2rem;
+    font-size: 16px;
+  }
+`;
+
+export const formComment = css`
+  margin-bottom: 0.6rem;
+`;
+
+export const inputComment = css`
+  font: inherit;
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  display: block;
+  color: #555;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+`;
+
+export const actions = css`
+  display: flex;
+  justify-content: flex-end;
+  button + button {
+    margin-left: 0.8rem;
+  }
 `;
 
 export const link = css`

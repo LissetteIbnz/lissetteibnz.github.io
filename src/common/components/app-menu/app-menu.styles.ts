@@ -42,10 +42,8 @@ export const container = css`
     text-transform: uppercase;
 
     &:first-child {
-      flex: 1;
       color: ${baseColor};
       font-size: 1.5rem;
-      align-self: flex-start;
       span {
         font-style: italic;
         color: ${accentColor};

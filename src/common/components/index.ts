@@ -1,4 +1,5 @@
 export * from './app-menu';
+export * from './button';
 export * from './button-top';
 export * from './container';
 export * from './error-boundary';

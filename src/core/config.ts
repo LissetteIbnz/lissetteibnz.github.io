@@ -11,7 +11,7 @@ export const config = {
 
   // Settings
   tagFilterBlog: 'blog',
-  separatedAttribute: '##',
+  separatedAttribute: ': ',
   beginningMark: '<!--',
   endingMark: '-->',
 

@@ -1,14 +1,16 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useLoaderContext } from '@/common/components';
-import { usePost } from './api';
+import { usePost } from './post-details.api';
 import { UrlParams } from './post-details.vm';
 import { PostDetailsComponent } from './post-details.component';
 
 export const PostDetailsContainer: React.FC = () => {
+  const [comment, setComment] = React.useState<string>('');
   const { issueNumber } = useParams<UrlParams>();
-  const { post, loading } = usePost(issueNumber);
+  const { post, loading } = usePost(Number(issueNumber));
+
   useLoaderContext(loading);
 
-  return <PostDetailsComponent post={post} />;
+  return <PostDetailsComponent post={post} comment={comment} updateComment={setComment} />;
 };

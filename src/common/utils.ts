@@ -1,5 +1,5 @@
 import readingTime from 'reading-time';
-import { AM } from '@/services/api';
+import * as AM from '@/common/models';
 import { config } from '@/core/config';
 
 export const getValidLabels = (labels: AM.Label[]): AM.Label[] =>

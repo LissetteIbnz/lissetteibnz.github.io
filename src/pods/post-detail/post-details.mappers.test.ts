@@ -1,4 +1,4 @@
-import { AM } from '@/services/api';
+import * as AM from '@/common/models';
 import { mapIssueAMToPostVM } from './post-details.mappers';
 import { Post } from './post-details.vm';
 

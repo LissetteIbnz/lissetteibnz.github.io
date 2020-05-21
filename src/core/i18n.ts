@@ -7,12 +7,16 @@ export const literals = {
   },
   common: {
     loading: 'Cargando',
+    preview: 'Previsualizar',
+    edit: 'Editar',
+    send: 'Enviar',
   },
   post: {
     published: 'Publicado',
     timeToRead: 'min de lectura',
     photoAuthorship: 'Foto de',
     showGithub: 'Ver en GitHub',
+    addComment: 'Deja tu comentario',
   },
   footer: {
     madeWith: 'Hecho con',

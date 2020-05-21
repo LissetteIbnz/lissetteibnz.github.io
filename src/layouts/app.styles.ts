@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import { theme } from '@/core/theme';
 
-const hightHeader = '58px';
+const hightHeader = '56px';
 
 export const container = css`
   display: flex;

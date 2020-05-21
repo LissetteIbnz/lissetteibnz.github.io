@@ -39,13 +39,13 @@ h6 {
   color: #222426;
   font-weight: bold;
   line-height: 1.2;
-  margin: 1.66667rem 0 0.83333rem;
+  margin: 1.6rem 0 0.83333rem;
   text-rendering: optimizeLegibility;
 }
 
 h1 {
   font-size: 2.22222rem;
-  margin: 0 0 1.66667rem;
+  margin: 1rem 0 1.6rem;
   font-weight: 600;
   line-height: 50px;
 }
@@ -55,7 +55,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.66667rem;
+  font-size: 1.6rem;
 }
 
 h4 {

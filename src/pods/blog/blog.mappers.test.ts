@@ -1,4 +1,4 @@
-import { AM } from '@/services/api';
+import * as AM from '@/common/models';
 import { mapIssueAMToVM } from './blog.mappers';
 import { Post } from './blog.vm';
 
@@ -44,6 +44,17 @@ describe('mapIssueAmToVM =>', () => {
       tags: [{ color: '#red', label: 'label 1' }],
       readingTime: '1',
       title: 'Irrelevant title',
+      author: {
+        avatarUrl: 'url',
+        url: 'url',
+        name: 'Irrelevant Author',
+      },
+      brief: '',
+      reactions: [],
+      urlGitHub: '',
+      attributes: {
+        description: '',
+      },
     };
 
     const result = mapIssueAMToVM(issue);
