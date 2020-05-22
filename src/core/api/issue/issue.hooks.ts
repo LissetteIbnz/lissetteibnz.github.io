@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery, useLazyQuery } from '@apollo/react-hooks';
-import { useComponentIsMounted } from '@/common/hooks';
+import { useComponentIsMounted, useNotFound } from '@/common/hooks';
 import { Issue, createEmptyIssue } from '@/common/models';
 import {
   GetIssuesResponse,
@@ -14,6 +14,7 @@ import { GET_LAST_ISSUES, GET_ISSUE_BY_NUMBER } from './issue.api';
 
 export const useFetchLastIssues = (count = 3): { issues: Issue[]; loading: boolean } => {
   const isMounted = useComponentIsMounted();
+  const notFound = useNotFound();
   const [issues, setIssues] = React.useState<Issue[]>([]);
   const { loading, error, data } = useQuery<GetIssuesResponse, GetIssuesParams>(GET_LAST_ISSUES, {
     variables: { offSet: count },
@@ -26,8 +27,11 @@ export const useFetchLastIssues = (count = 3): { issues: Issue[]; loading: boole
   }, [loading, data, data?.repository?.issues?.nodes, isMounted]);
 
   React.useEffect(() => {
-    error && console.error(error);
-  }, [error]);
+    if (error) {
+      console.error(error);
+      notFound();
+    }
+  }, [error, notFound]);
 
   return {
     loading,
@@ -37,6 +41,7 @@ export const useFetchLastIssues = (count = 3): { issues: Issue[]; loading: boole
 
 export const useFetchIssueByNumber = (issueNumber: number): { issue: Issue; loading: boolean } => {
   const isMounted = useComponentIsMounted();
+  const notFound = useNotFound();
   const [issue, setIssue] = React.useState(createEmptyIssue());
   // TODO: I've to fetch from cache
   const { issues, loading: loadingFetchIssues } = useFetchLastIssues();
@@ -71,8 +76,11 @@ export const useFetchIssueByNumber = (issueNumber: number): { issue: Issue; load
   ]);
 
   React.useEffect(() => {
-    error && console.warn(error);
-  }, [error]);
+    if (error) {
+      console.error(error);
+      notFound();
+    }
+  }, [error, notFound]);
 
   const loading = React.useMemo(() => (called && loadingFetchIssueByNumber) || loadingFetchIssues, [
     called,

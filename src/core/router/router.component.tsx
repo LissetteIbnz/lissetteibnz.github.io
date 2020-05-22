@@ -33,8 +33,11 @@ export const RouterComponent = () => (
       <Route path={switchRoutes.blogPost}>
         <PostDetailsScene />
       </Route>
-      <Route>
+      <Route path={switchRoutes.notFound}>
         <NotFoundScene />
+      </Route>
+      <Route>
+        <Redirect to={switchRoutes.notFound} />
       </Route>
     </Switch>
   </HashRouter>
