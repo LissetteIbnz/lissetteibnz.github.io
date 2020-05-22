@@ -10,10 +10,13 @@ export const AppMenu: React.FC = () => {
     setOpen(prev => !prev);
   };
 
-  const containerStyles = cx(classes.container, { [classes.responsive]: open });
+  const rootStyles = cx(classes.fixed, 'animate__slideInDown animated');
+  const containerStyles = cx(classes.container, {
+    [classes.responsive]: open,
+  });
 
   return (
-    <div className={classes.fixed}>
+    <div className={rootStyles}>
       <div className={containerStyles}>
         <BrandLink />
         <NavBar />

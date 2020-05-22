@@ -10,35 +10,38 @@ import {
   ProjectsScene,
 } from '@/scenes';
 import { switchRoutes } from './routes';
+import { AppLayout } from '@/layouts';
 
 export const RouterComponent = () => (
   <HashRouter>
-    <ScrollToTop />
-    <Switch>
-      <Route exact={true} path={switchRoutes.root}>
-        <Redirect to={switchRoutes.home} />
-      </Route>
-      <Route exact={true} path={switchRoutes.home}>
-        <HomeScene />
-      </Route>
-      <Route exact={true} path={switchRoutes.aboutMe}>
-        <AboutScene />
-      </Route>
-      <Route exact={true} path={switchRoutes.blog}>
-        <BlogScene />
-      </Route>
-      {/* <Route exact={true} path={switchRoutes.projects}>
+    <AppLayout>
+      <ScrollToTop />
+      <Switch>
+        <Route exact={true} path={switchRoutes.root}>
+          <Redirect to={switchRoutes.home} />
+        </Route>
+        <Route exact={true} path={switchRoutes.home}>
+          <HomeScene />
+        </Route>
+        <Route exact={true} path={switchRoutes.aboutMe}>
+          <AboutScene />
+        </Route>
+        <Route exact={true} path={switchRoutes.blog}>
+          <BlogScene />
+        </Route>
+        {/* <Route exact={true} path={switchRoutes.projects}>
         <ProjectsScene />
       </Route> */}
-      <Route path={switchRoutes.blogPost}>
-        <PostDetailsScene />
-      </Route>
-      <Route path={switchRoutes.notFound}>
-        <NotFoundScene />
-      </Route>
-      <Route>
-        <Redirect to={switchRoutes.notFound} />
-      </Route>
-    </Switch>
+        <Route path={switchRoutes.blogPost}>
+          <PostDetailsScene />
+        </Route>
+        <Route path={switchRoutes.notFound}>
+          <NotFoundScene />
+        </Route>
+        <Route>
+          <Redirect to={switchRoutes.notFound} />
+        </Route>
+      </Switch>
+    </AppLayout>
   </HashRouter>
 );
