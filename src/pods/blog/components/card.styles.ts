@@ -9,13 +9,13 @@ export const container = css`
   transition: all 0.2s ease 0s;
   margin-bottom: 5em;
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     :first-child {
       margin-top: 2em;
     }
   }
 
-  ${theme.breakpoints.bpMaxSM} {
+  ${theme.breakpoints.maxSM} {
     padding: 0;
     margin-bottom: 3em;
   }
@@ -26,7 +26,7 @@ export const container = css`
 `;
 
 export const header = css`
-  ${theme.breakpoints.bpMaxSM} {
+  ${theme.breakpoints.maxSM} {
     display: none;
   }
 

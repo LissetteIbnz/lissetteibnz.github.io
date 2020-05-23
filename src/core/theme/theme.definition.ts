@@ -1,8 +1,8 @@
 import { ThemeOptions } from './theme.vm';
 
 /** Theme definition */
-const maxSM = '700px';
-const maxMD = '1000px';
+const smSize = '700px';
+const mdSize = '1000px';
 
 const lightTheme: ThemeOptions = {
   text: '#222426',
@@ -47,10 +47,8 @@ export const theme = {
     highlight: '#b665e6',
   },
   breakpoints: {
-    sm: maxSM,
-    md: maxMD,
-    bpMaxSM: `@media screen and (max-width: ${maxSM})`,
-    bpMaxMD: `@media screen and (max-width: ${maxMD})`,
+    maxSM: `@media screen and (max-width: ${smSize})`,
+    maxMD: `@media screen and (max-width: ${mdSize})`,
   },
   shape: {
     borderRadius: 0,

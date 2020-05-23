@@ -5,7 +5,7 @@ export const root = css`
   display: flex;
   flex-direction: row;
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     display: none;
 
     &.responsive {

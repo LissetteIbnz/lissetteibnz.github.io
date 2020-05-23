@@ -1,12 +1,13 @@
 import { css } from 'emotion';
 import { theme } from '@/core/theme';
 
-const hightHeader = '56px';
+const heightHeader = '56px';
 
 export const container = css`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
 `;
 
 export const main = css`
@@ -17,9 +18,9 @@ export const main = css`
   margin: 2rem auto 0px;
   padding: 7rem 10px 10px;
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     width: 100%;
-    margin: ${hightHeader} auto 0;
+    margin: ${heightHeader} auto 0;
     padding: 0;
   }
 `;

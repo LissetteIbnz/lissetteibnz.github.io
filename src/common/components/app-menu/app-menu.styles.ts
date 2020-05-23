@@ -14,7 +14,7 @@ export const fixed = css`
   min-height: 50px;
   padding: 20px 0;
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     padding: 0;
   }
 `;
@@ -25,6 +25,7 @@ export const container = css`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  line-height: normal;
 
   & > div {
     padding: 0;
@@ -56,7 +57,7 @@ export const container = css`
     }
   }
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     a {
       &:not(:first-child) {
         display: none;
@@ -66,17 +67,26 @@ export const container = css`
     }
 
     & > div {
-      margin: 14px 26px;
+      margin: 12px;
     }
   }
 `;
 
 export const responsive = css`
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     flex-direction: column;
     align-items: center;
     & a:not(:first-child) {
       display: block;
     }
+    #toggle-dark-mode {
+      display: none;
+    }
+  }
+`;
+
+export const toggle = css`
+  ${theme.breakpoints.maxMD} {
+    display: none;
   }
 `;

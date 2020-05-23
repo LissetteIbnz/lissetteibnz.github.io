@@ -1,5 +1,11 @@
 export type Theme = 'system' | 'light' | 'dark';
 
+export interface Context {
+  theme: Theme;
+  isDark: boolean;
+  toggleTheme: () => void;
+}
+
 export const STORAGE_KEY = 'theme';
 export const VALID_THEMES: Theme[] = ['system', 'light', 'dark'];
 export const DARK_MODE_MEDIA_QUERY = '(prefers-color-scheme: dark)';

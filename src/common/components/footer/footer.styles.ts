@@ -14,7 +14,7 @@ export const root = css`
     margin-left: 20px;
   }
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     height: auto;
     padding: 1rem 0;
     flex-wrap: wrap;

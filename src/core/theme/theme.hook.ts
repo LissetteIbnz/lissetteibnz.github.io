@@ -1,5 +1,5 @@
 import React from 'react';
 import { ThemeContext } from './theme.context';
-import { Theme } from './theme.vm';
+import { Context } from './theme.vm';
 
-export const useAppTheme = (): Theme => React.useContext(ThemeContext).theme;
+export const useAppTheme = (): Context => React.useContext(ThemeContext);

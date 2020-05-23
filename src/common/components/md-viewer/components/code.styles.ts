@@ -10,7 +10,7 @@ export const wrapper = css`
 
 export const pre = css`
   padding: 0 10px;
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     width: fit-content;
   }
 `;

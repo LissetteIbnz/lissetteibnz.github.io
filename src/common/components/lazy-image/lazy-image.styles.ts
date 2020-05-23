@@ -10,7 +10,7 @@ export const img = css`
   transition: all ease 0.3s;
   opacity: 0;
 
-  ${theme.breakpoints.bpMaxSM} {
+  ${theme.breakpoints.maxSM} {
     max-height: 200px;
   }
 `;

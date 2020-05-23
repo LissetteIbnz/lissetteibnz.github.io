@@ -1,10 +1,6 @@
 import React from 'react';
 import { getAppTheme, setAppTheme } from './theme.business';
-import { Theme, DARK_MODE_MEDIA_QUERY } from './theme.vm';
-
-interface Context {
-  theme: Theme;
-}
+import { DARK_MODE_MEDIA_QUERY, Context } from './theme.vm';
 
 export const ThemeContext = React.createContext<Context>(null);
 
@@ -16,6 +12,12 @@ export const ThemeProvider: React.FC = ({ children }) => {
 
     setTheme(theme);
   };
+
+  const toggleTheme = () => {
+    setTheme(theme => (theme === 'light' ? 'dark' : 'light'));
+  };
+
+  const isDark = theme === 'dark';
 
   React.useEffect(() => {
     setAppTheme(theme);
@@ -31,5 +33,7 @@ export const ThemeProvider: React.FC = ({ children }) => {
     };
   }, []);
 
-  return <ThemeContext.Provider value={{ theme }}>{children}</ThemeContext.Provider>;
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme, isDark }}>{children}</ThemeContext.Provider>
+  );
 };

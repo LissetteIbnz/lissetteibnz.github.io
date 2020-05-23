@@ -6,7 +6,7 @@ export const menu = css`
   cursor: pointer;
   outline: 0;
 
-  ${theme.breakpoints.bpMaxMD} {
+  ${theme.breakpoints.maxMD} {
     display: inline-block;
     position: absolute;
     right: 0;
