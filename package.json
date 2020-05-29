@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A blog site",
   "main": "index.js",
+  "homepage": "./",
   "scripts": {
     "start": "run-p -l type-check:watch start:dev",
     "start:dev": "webpack-dev-server --config ./config/webpack/dev.js",
@@ -14,7 +15,7 @@
     "test": "jest -c ./config/test/jest.js --verbose",
     "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watchAll -i",
-    "clean": "rimraf dist && rimraf index.html && rimraf *.png",
+    "clean": "rimraf dist && rimraf docs && rimraf index.html && rimraf *.png",
     "format": "prettier src",
     "lint": "eslint src --ext .ts,.tsx ",
     "lint:fix": "npm run lint -- --fix"

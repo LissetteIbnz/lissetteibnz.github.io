@@ -6,7 +6,7 @@ const helpers = require('./helpers');
 module.exports = merge(base, {
   mode: 'production',
   output: {
-    path: helpers.resolveFromRootPath(''),
+    path: helpers.distPath, //helpers.resolveFromRootPath(''),
     filename: `${helpers.outputBundlesPath}/[name].[chunkhash].js`,
   },
   module: {

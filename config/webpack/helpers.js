@@ -12,7 +12,7 @@ exports.srcAssetsPath = resolveFromRootPath('src', constants.PUBLIC_FOLDER_NAME)
 exports.distPath = resolveFromRootPath(constants.DIST_FOLDER_NAME);
 exports.contentPath = resolveFromRootPath(constants.CONTENT_FOLDER_NAME);
 
-exports.outputBundlesPath = `${constants.DIST_FOLDER_NAME}/${constants.BUNDLE_FOLDER_NAME}`;
-exports.outputImagesPath = `${constants.DIST_FOLDER_NAME}/${constants.IMAGES_FOLDER_NAME}`;
-exports.outputStylesPath = `${constants.DIST_FOLDER_NAME}/${constants.STYLES_FOLDER_NAME}`;
+exports.outputBundlesPath = `${constants.BUNDLE_FOLDER_NAME}`;
+exports.outputImagesPath = `${constants.IMAGES_FOLDER_NAME}`;
+exports.outputStylesPath = `${constants.STYLES_FOLDER_NAME}`;
 exports.publicImagesPathRelative = `${constants.PUBLIC_FOLDER_NAME}/${constants.IMAGES_FOLDER_NAME}`;
