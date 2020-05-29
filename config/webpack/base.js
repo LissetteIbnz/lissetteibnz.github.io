@@ -15,7 +15,7 @@ module.exports = merge(
       extensions: ['.js', '.ts', '.tsx'],
     },
     entry: {
-      baseStyles: [`${helpers.srcAssetsPath}/app.css`, `${helpers.srcAssetsPath}/animate.css`],
+      baseStyles: [`${helpers.srcAssetsPath}/animate.css`],
       app: ['regenerator-runtime/runtime', './index.tsx'],
     },
     module: {
