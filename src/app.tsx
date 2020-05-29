@@ -5,19 +5,20 @@ import { ErrorBoundary, Loader, LoaderProvider } from '@/common/components';
 import { RouterComponent } from '@/core/router';
 import { ThemeProvider } from '@/core/theme';
 import { client } from '@/core/api';
+import './app.globalStyles';
 
 const App: React.FC = () => (
   <React.StrictMode>
-    <ApolloProvider client={client}>
-      <ThemeProvider>
-        <ErrorBoundary>
+    <ErrorBoundary>
+      <ApolloProvider client={client}>
+        <ThemeProvider>
           <LoaderProvider>
-            <Loader />
+            {/* <Loader /> */}
             <RouterComponent />
           </LoaderProvider>
-        </ErrorBoundary>
-      </ThemeProvider>
-    </ApolloProvider>
+        </ThemeProvider>
+      </ApolloProvider>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 

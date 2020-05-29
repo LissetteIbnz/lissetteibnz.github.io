@@ -1,10 +1,15 @@
 import React from 'react';
-import * as classes from './social.styles';
 import { literals } from '@/core/i18n';
+import type { Theme } from '@/core/theme';
+import * as classes from './social.styles';
 
-const Link: React.FC<SocialProps & { title: string }> = ({ children, url, title }) => (
+interface LinkProps extends SocialProps {
+  title: string;
+  theme: Theme;
+}
+const Link: React.FC<LinkProps> = ({ children, url, title, theme }) => (
   <a
-    className={classes.anchor}
+    className={classes.anchor(theme)}
     aria-label={title}
     href={url}
     title={title}
@@ -19,10 +24,11 @@ const visitMySocial = (socialLink: string) => `${literals.footer.visitMy} ${soci
 
 interface SocialProps {
   url: string;
+  theme: Theme;
 }
 
-export const Twitter: React.FC<SocialProps> = ({ url }) => (
-  <Link title={visitMySocial(Twitter.name)} url={url}>
+export const Twitter: React.FC<SocialProps> = ({ url, theme }) => (
+  <Link title={visitMySocial(Twitter.name)} url={url} theme={theme}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -33,8 +39,8 @@ export const Twitter: React.FC<SocialProps> = ({ url }) => (
   </Link>
 );
 
-export const LinkedIn: React.FC<SocialProps> = ({ url }) => (
-  <Link title={visitMySocial(LinkedIn.name)} url={url}>
+export const LinkedIn: React.FC<SocialProps> = ({ url, theme }) => (
+  <Link title={visitMySocial(LinkedIn.name)} url={url} theme={theme}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -45,8 +51,8 @@ export const LinkedIn: React.FC<SocialProps> = ({ url }) => (
   </Link>
 );
 
-export const GitHub: React.FC<SocialProps> = ({ url }) => (
-  <Link title={visitMySocial(GitHub.name)} url={url}>
+export const GitHub: React.FC<SocialProps> = ({ url, theme }) => (
+  <Link title={visitMySocial(GitHub.name)} url={url} theme={theme}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"
@@ -57,8 +63,8 @@ export const GitHub: React.FC<SocialProps> = ({ url }) => (
   </Link>
 );
 
-export const Email: React.FC<SocialProps> = ({ url }) => (
-  <Link title={literals.footer.sendMeAnEmail} url={url}>
+export const Email: React.FC<SocialProps> = ({ url, theme }) => (
+  <Link title={literals.footer.sendMeAnEmail} url={url} theme={theme}>
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
       <path
         fill="currentColor"

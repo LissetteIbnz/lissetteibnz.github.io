@@ -8,6 +8,7 @@ export const literals = {
   common: {
     loading: 'Cargando',
     preview: 'Previsualizar',
+    editing: 'Seguir editando',
     edit: 'Editar',
     send: 'Enviar',
   },

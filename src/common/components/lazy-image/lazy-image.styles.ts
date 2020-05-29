@@ -1,11 +1,11 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
 export const wrapper = css`
   overflow: hidden;
 `;
 
-export const img = css`
+export const img = (theme: Theme) => css`
   object-fit: cover;
   transition: all ease 0.3s;
   opacity: 0;

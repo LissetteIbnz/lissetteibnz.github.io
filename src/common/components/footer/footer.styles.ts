@@ -1,8 +1,8 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-export const root = css`
-  background: ${theme.colors.purple};
+export const root = (theme: Theme) => css`
+  background: ${theme.primary.light};
   color: white;
   padding: 4rem;
   height: 80px;

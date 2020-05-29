@@ -1,6 +1,7 @@
 import React from 'react';
 import { literals } from '@/core/i18n';
 import { LoaderOptions } from './loader.vm';
+import { Loader } from './loader.component';
 
 interface Context {
   loading: boolean;

@@ -1,20 +1,22 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-const heightHeader = '56px';
+const heightHeader = '52px';
 
-export const container = css`
+export const container = (theme: Theme) => css`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
+  ${theme.breakpoints.minLG} {
+    font-size: 1.1rem;
+  }
 `;
 
-export const main = css`
+export const main = (theme: Theme) => css`
   flex: 1;
   margin: 1rem;
   width: 90%;
-  max-width: 1000px;
+  max-width: ${theme.breakpoints.lgSize};
   margin: 2rem auto 0px;
   padding: 7rem 10px 10px;
 

@@ -1,39 +1,45 @@
 import React from 'react';
-import { getAppTheme, setAppTheme } from './theme.business';
+import { getAppTheme, setAppTheme, isLightOrDark } from './theme.business';
+import { mergeTheme } from './theme.definition';
 import { DARK_MODE_MEDIA_QUERY, Context } from './theme.vm';
 
 export const ThemeContext = React.createContext<Context>(null);
 
 export const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = React.useState(getAppTheme);
+  const [modeTheme, setModeTheme] = React.useState(getAppTheme);
+  const [theme, setTheme] = React.useState(mergeTheme);
 
-  const handleThemeChange = (event: MediaQueryListEvent) => {
+  const handleModeThemeChange = (event: MediaQueryListEvent) => {
     const theme = event.matches ? 'dark' : 'light';
 
-    setTheme(theme);
+    setModeTheme(theme);
   };
 
-  const toggleTheme = () => {
-    setTheme(theme => (theme === 'light' ? 'dark' : 'light'));
-  };
+  const toggleTheme = React.useCallback(() => {
+    setModeTheme(mode => (mode === 'light' ? 'dark' : 'light'));
+  }, []);
 
-  const isDark = theme === 'dark';
+  const isDark = modeTheme === 'dark';
 
   React.useEffect(() => {
-    setAppTheme(theme);
-  }, [theme]);
+    setAppTheme(modeTheme);
+    const option = isLightOrDark(modeTheme);
+    setTheme(mergeTheme(option));
+  }, [modeTheme]);
 
   React.useEffect(() => {
     const mediaQuery = window.matchMedia(DARK_MODE_MEDIA_QUERY);
 
-    mediaQuery.addListener(handleThemeChange);
+    mediaQuery.addListener(handleModeThemeChange);
 
     return () => {
-      mediaQuery.removeListener(handleThemeChange);
+      mediaQuery.removeListener(handleModeThemeChange);
     };
   }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, isDark }}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={{ theme, mode: modeTheme, toggleTheme, isDark }}>
+      {children}
+    </ThemeContext.Provider>
   );
 };

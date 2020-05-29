@@ -1,12 +1,4 @@
 import React from 'react';
-import { css } from 'emotion';
+import * as classes from './title.styles';
 
-export const Title: React.FC = ({ children }) => (
-  <h1
-    className={css`
-      text-align: center;
-    `}
-  >
-    {children}
-  </h1>
-);
+export const Title: React.FC = ({ children }) => <h1 className={classes.title}>{children}</h1>;

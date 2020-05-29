@@ -1,10 +1,12 @@
 import React from 'react';
 import { cx } from 'emotion';
+import { useTheme } from '@/core/theme';
 import * as classes from './button-top.styles';
 
 const topEdge = 60;
 
 export const ButtonTop = () => {
+  const theme = useTheme();
   const [isHidden, setIsHidden] = React.useState(true);
 
   const scrollFunction = () => {
@@ -27,7 +29,7 @@ export const ButtonTop = () => {
   return (
     <button
       aria-label="Scroll to top"
-      className={cx(classes.button, { [classes.hide]: isHidden })}
+      className={cx(classes.button(theme), { [classes.hide(theme)]: isHidden })}
       onClick={handleOnClick}
     >
       <span className={classes.chevron}></span>

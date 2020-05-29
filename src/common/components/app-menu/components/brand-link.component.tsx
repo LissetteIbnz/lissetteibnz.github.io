@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { baseRoutes } from '@/core/router';
 import * as classes from './brand-link.styles';
 
-export const BrandLink = () => (
+interface BrandLinkProps {
+  path: string;
+  onClick: () => void;
+}
+
+export const BrandLink: React.FC<BrandLinkProps> = ({ path, onClick }) => (
   <div className={classes.root}>
-    <RouterLink to={baseRoutes.home}>
+    <RouterLink to={path} onClick={onClick}>
       Lissette<span>Ibnz</span>
     </RouterLink>
   </div>

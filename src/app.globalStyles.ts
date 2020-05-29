@@ -3,6 +3,13 @@ import { injectGlobal } from 'emotion';
 injectGlobal`
 @import url('https://fonts.googleapis.com/css?family=Maven+Pro|Quicksand&display=swap');
 
+:root {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: normal;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -32,7 +39,6 @@ html {
   color: #121212;
 
   a {
-  font-size: 1.2rem;
   color: #b665e6;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -117,7 +123,6 @@ h6 {
 
 h1 {
   font-size: 2.22222rem;
-  margin: 1rem 0 1.6rem;
   font-weight: 600;
   line-height: 50px;
 }
@@ -146,14 +151,6 @@ p,
 a {
   text-rendering: optimizeLegibility;
 }
-
-body, p {
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.7;
-  letter-spacing: normal;
-}
-
 
 ul {
   list-style: none;

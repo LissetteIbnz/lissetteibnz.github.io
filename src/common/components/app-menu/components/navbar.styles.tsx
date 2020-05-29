@@ -1,7 +1,7 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-export const root = css`
+export const root = (theme: Theme) => css`
   display: flex;
   flex-direction: row;
 

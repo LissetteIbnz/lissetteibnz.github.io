@@ -1,13 +1,15 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-export const container = css`
+export const container = (theme: Theme) => css`
   cursor: pointer;
   position: relative;
   border-radius: 10px;
   padding: 1.2rem;
-  transition: all 0.2s ease 0s;
   margin-bottom: 5em;
+  transition: all 0.2s ease 0s;
+  background: ${theme.background.paper};
+  box-shadow: ${theme.shadows[1]};
 
   ${theme.breakpoints.maxMD} {
     :first-child {
@@ -16,65 +18,61 @@ export const container = css`
   }
 
   ${theme.breakpoints.maxSM} {
-    padding: 0;
-    margin-bottom: 3em;
+    padding: 1rem;
+    margin-bottom: 1.5em;
   }
 
   &:hover {
-    background-color: #e8e6e6;
+    box-shadow: ${theme.shadows[2]};
+  }
+  &:active {
+    box-shadow: ${theme.shadows[3]};
   }
 `;
 
-export const header = css`
-  ${theme.breakpoints.maxSM} {
-    display: none;
-  }
-
+export const header = (theme: Theme) => css`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  & > div {
-    display: flex;
-    justify-content: start;
-    flex-flow: row wrap;
-
-    & div {
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      color: rgb(255, 255, 255);
-      font-weight: 300;
-      line-height: 28px;
-      border-radius: 3px;
-      padding: 3px 15px;
-      &:not(:last-child) {
-        margin-right: 0.5rem;
-      }
-    }
-  }
   & > p {
     font-size: 15px;
     padding: 0;
     margin: 0;
+    color: ${theme.text.hint};
     & > span::before {
       padding: 8px;
-      color: black;
       content: '·';
     }
   }
 `;
 
-export const content = css`
-  h2 {
-    font-size: 2em;
-    font-weight: 600;
-    line-height: 1.25;
+export const tags = (theme: Theme) => css`
+  display: flex;
+  justify-content: start;
+  flex-flow: row wrap;
+
+  ${theme.breakpoints.maxMD} {
+    display: none;
   }
-  p {
-    font-size: 18px;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin: 0;
+
+  & div {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    line-height: 28px;
+    border-radius: 3px;
+    padding: 3px 15px;
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
   }
+`;
+
+export const brief = css`
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
 `;

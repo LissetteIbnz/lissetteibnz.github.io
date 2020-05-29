@@ -1,22 +1,22 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-export const button = css`
+export const button = (theme: Theme) => css`
   visibility: visible;
   opacity: 1;
-  color: ${theme.colors.white};
+  bottom: 16px;
+  right: 16px;
   position: fixed;
+  color: ${theme.primary.contrastText};
+  background-color: ${theme.primary.main};
+  border-color: ${theme.primary.main};
   transform-origin: center center;
-  background-color: ${theme.colors.purple};
-  border-color: ${theme.colors.purple};
   height: 46px;
   width: 46px;
   box-shadow: ${theme.shadows[1]};
   transition-duration: 0.28s;
   transition-property: box-shadow, transform, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  bottom: 16px;
-  right: 16px;
   user-select: none;
   cursor: pointer;
   border-radius: 50%;
@@ -24,14 +24,14 @@ export const button = css`
   transition: ${theme.transition.ease};
 
   &:hover {
-    background: ${theme.colors.purpleLighten};
-    box-shadow: 0 0 1px 7px rgba(210, 0, 104, 0.15);
+    background: ${theme.primary.light};
+    box-shadow: 0 0 1px 7px ${theme.primary.dark};
     color: #fff;
     outline: 0;
   }
 `;
 
-export const hide = css`
+export const hide = (theme: Theme) => css`
   visibility: hidden;
   opacity: 0;
   transition: ${theme.transition.ease};

@@ -3,6 +3,7 @@ import { cx } from 'emotion';
 import { useComponentIsMounted } from '@/common/hooks';
 import { MarkdownViewer } from '../md-viewer';
 import * as classes from './lazy-image.styles';
+import { useTheme } from '@/core/theme';
 
 interface LazyImageProps {
   url: string;
@@ -19,6 +20,7 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   height = '320px',
   width = '100%',
 }) => {
+  const theme = useTheme();
   const isMounted = useComponentIsMounted();
   const [imageSrc, setImageSrc] = React.useState<string>(url);
   const [imageRef, setImageRef] = React.useState<HTMLImageElement>();
@@ -55,13 +57,13 @@ export const LazyImage: React.FC<LazyImageProps> = ({
         observer.unobserve(imageRef);
       }
     };
-  }, [url, imageSrc, imageRef]);
+  }, [url, imageSrc, imageRef, isMounted]);
 
   return (
     <div className={classes.wrapper}>
       <img
         ref={setImageRef}
-        className={cx(classes.img, {
+        className={cx(classes.img(theme), {
           [classes.loading]: imgIsLoading,
           [classes.loaded]: !imgIsLoading,
         })}

@@ -1,5 +1,4 @@
 import { config } from '@/core/config';
-import { literals } from '@/core/i18n';
 import * as AM from '@/common/models';
 import {
   normalizeColor,
@@ -30,7 +29,7 @@ export const mapIssueAMToVM = (issue: AM.Issue): Post =>
       ? (convertAttributesInObject(extractAttributesFromMD(issue.body)) as Post['attributes'])
       : undefined,
     datePublish: transformedDate(issue.updatedAt),
-    readingTime: `${getReadingTime(issue.body)} ${literals.post.timeToRead}`,
+    readingTime: `${getReadingTime(issue.body)}`,
     title: issue.title,
     urlGitHub: issue.url,
     reactions: [],

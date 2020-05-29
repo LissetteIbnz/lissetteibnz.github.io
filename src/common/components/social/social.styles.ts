@@ -1,8 +1,8 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-export const anchor = css`
-  color: ${theme.colors.white};
+export const anchor = (theme: Theme) => css`
+  color: ${theme.common.white};
   svg {
     display: block;
   }

@@ -1,7 +1,7 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-export const menu = css`
+export const menu = (theme: Theme) => css`
   display: none;
   cursor: pointer;
   outline: 0;

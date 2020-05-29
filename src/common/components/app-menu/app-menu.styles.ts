@@ -1,11 +1,9 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-const { oposite: baseColor, highlight: accentColor } = theme.text;
-
-export const fixed = css`
+export const fixed = (theme: Theme) => css`
   margin-bottom: 0;
-  background-color: #333;
+  background: #333;
   position: fixed;
   top: 0;
   right: 0;
@@ -13,13 +11,14 @@ export const fixed = css`
   z-index: 1030;
   min-height: 50px;
   padding: 20px 0;
+  box-shadow: 0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15);
 
   ${theme.breakpoints.maxMD} {
     padding: 0;
   }
 `;
 
-export const container = css`
+export const container = (theme: Theme) => css`
   max-width: 1170px;
   margin: 0 auto;
   display: flex;
@@ -43,17 +42,12 @@ export const container = css`
     text-transform: uppercase;
 
     &:first-child {
-      color: ${baseColor};
+      color: ${theme.common.white};
       font-size: 1.5rem;
       span {
         font-style: italic;
-        color: ${accentColor};
+        color: ${theme.primary.main};
       }
-    }
-
-    &:hover,
-    &:focus {
-      color: ${baseColor};
     }
   }
 
@@ -72,20 +66,17 @@ export const container = css`
   }
 `;
 
-export const responsive = css`
+export const responsive = (theme: Theme) => css`
   ${theme.breakpoints.maxMD} {
     flex-direction: column;
     align-items: center;
     & a:not(:first-child) {
       display: block;
     }
-    #toggle-dark-mode {
-      display: none;
-    }
   }
 `;
 
-export const toggle = css`
+export const toggle = (theme: Theme) => css`
   ${theme.breakpoints.maxMD} {
     display: none;
   }

@@ -1,17 +1,17 @@
 import { css } from 'emotion';
-import { theme } from '@/core/theme';
+import type { Theme } from '@/core/theme';
 
-const baseColor = theme.text.oposite;
+const baseColor = (theme: Theme) => theme.common.white;
 
-export const link = css`
+export const link = (theme: Theme) => css`
   position: relative;
-  color: ${baseColor};
+  color: ${baseColor(theme)};
   text-decoration: none;
   user-select: none;
 
   &:hover,
   &:focus {
-    color: ${baseColor};
+    color: ${baseColor(theme)};
   }
 
   &::before {
@@ -21,7 +21,7 @@ export const link = css`
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: ${baseColor};
+    background-color: ${baseColor(theme)};
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);

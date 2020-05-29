@@ -1,12 +1,18 @@
 import React from 'react';
-import { baseRoutes } from '@/core/router';
-import { normalizeString } from '@/common/utils';
-import { Link } from './link.component';
+import type { Theme } from '@/core/theme';
+import { Link } from '../app-menu.vm';
+import { LinkComponent } from './link.component';
 
-export const NavBar: React.FC = () => (
+interface NavBarProps {
+  links: Link[];
+  theme: Theme;
+  onClick: () => void;
+}
+
+export const NavBar: React.FC<NavBarProps> = ({ links, theme, onClick }) => (
   <>
-    {Object.keys(baseRoutes).map(item => (
-      <Link key={item} label={normalizeString(item)} path={baseRoutes[item]} />
+    {links.map(link => (
+      <LinkComponent link={link} key={link.label} onClick={onClick} theme={theme} />
     ))}
   </>
 );

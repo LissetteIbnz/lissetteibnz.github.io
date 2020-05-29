@@ -1,15 +1,17 @@
 import React from 'react';
 import { css } from 'emotion';
 import { literals } from '@/core/i18n';
+import type { Theme } from '@/core/theme';
 import { Post } from '../blog.vm';
 import * as classes from './card.styles';
 
 interface CardProps {
   post: Post;
+  theme: Theme;
   loadPostById: ({ title, id }: Post) => void;
 }
 
-export const Card: React.FC<CardProps> = ({ post, loadPostById, children }) => {
+export const Card: React.FC<CardProps> = ({ post, theme, loadPostById, children }) => {
   const { datePublish, readingTime, title, tags } = post;
 
   const handleOnClick = () => {
@@ -17,9 +19,9 @@ export const Card: React.FC<CardProps> = ({ post, loadPostById, children }) => {
   };
 
   return (
-    <div className={classes.container} onClick={handleOnClick}>
-      <div className={classes.header}>
-        <div>
+    <div className={classes.container(theme)} onClick={handleOnClick}>
+      <div className={classes.header(theme)}>
+        <div className={classes.tags(theme)}>
           {tags &&
             tags.map(tag => (
               <div
@@ -33,13 +35,13 @@ export const Card: React.FC<CardProps> = ({ post, loadPostById, children }) => {
             ))}
         </div>
         <p>
-          {`${literals.post.published} ${datePublish}`}
+          {datePublish}
           <span>{`${readingTime} ${literals.post.timeToRead}`}</span>
         </p>
       </div>
-      <div className={classes.content}>
+      <div>
         <h2>{title}</h2>
-        <p>{children}</p>
+        <p className={classes.brief}>{children}</p>
       </div>
     </div>
   );
