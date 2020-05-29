@@ -12,6 +12,7 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "test": "jest -c ./config/test/jest.js --verbose",
+    "test:coverage": "npm run test -- --coverage",
     "test:watch": "npm run test -- --watchAll -i",
     "clean": "rimraf dist && rimraf index.html && rimraf *.png",
     "format": "prettier src",
@@ -23,7 +24,6 @@
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
     "apollo-boost": "^0.4.9",
-    "codyhouse-framework": "^2.6.2",
     "emotion": "^10.0.27",
     "graphql": "^14.6.0",
     "prism-react-renderer": "^1.1.1",
